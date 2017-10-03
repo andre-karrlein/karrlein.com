@@ -11,6 +11,6 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function () {
+    return /karrlein/webpage/Factory::createIndexResponse()->returnResponse();
 });
