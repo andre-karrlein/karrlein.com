@@ -12,5 +12,5 @@
 */
 
 $router->get('/', function () {
-    return /karrlein/webpage/Factory::createIndexResponse()->returnResponse();
+    return \karrlein\webpage\Factory::createIndexResponse()->returnResponse();
 });
