@@ -9,7 +9,7 @@ class IndexResponse
 
 	public function returnResponse()
 	{
-		return new Response(view('index',[],200));
+		return new Response(view('index'),200);
 	}
 
 }
