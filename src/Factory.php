@@ -1,10 +1,11 @@
 <?php
 
-namespace karrlein/webpage;
+namespace karrlein\webpage;
 
-class Factory {
+class Factory
+{
 
-	public static function createIndexResponse() : IndexResponse
+	public static function createIndexResponse()
 	{
 		return new IndexResponse();
 	}

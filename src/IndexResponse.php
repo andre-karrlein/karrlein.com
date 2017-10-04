@@ -1,12 +1,15 @@
 <?php
 
-namespace karrlein/webpage;
+namespace karrlein\webpage;
 
-class IndexResponse {
+use Illuminate\Http\Response;
+
+class IndexResponse
+{
 
 	public function returnResponse()
 	{
-		return view('index');
+		return new Response(view('index',200));
 	}
 
 }
