@@ -1,13 +1,11 @@
-<?php declare(strict_types=1)
+<?php declare(strict_types=1);
 
-namespace karrlein\webpage;
+namespace ak1\karrlein;
 
 class Factory
 {
-
-	public static function createIndexResponse(): IndexResponse
-	{
-		return new IndexResponse();
-	}
-
+    public function createMainPage(): HtmlTemplate
+    {
+        return HtmlTemplate::fromFile(__DIR__ . '/../html/Index.html');
+    }
 }
