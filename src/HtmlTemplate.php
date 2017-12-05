@@ -4,20 +4,20 @@ namespace ak1\karrlein;
 
 class HtmlTemplate //implements Template
 {
-	private $filePath;
+    private $filePath;
 
-	private function __construct(string $filePath)
-	{
-		$this->filePath = $filePath;
-	}
+    private function __construct(string $filePath)
+    {
+        $this->filePath = $filePath;
+    }
 
-	public static function fromFile(string $filePath): HtmlTemplate
-	{
-		return new self($filePath);
-	}
+    public static function fromFile(string $filePath): HtmlTemplate
+    {
+        return new self($filePath);
+    }
 
-	public function getTemplate(): string
-	{
-		return file_get_contents($this->filePath);
-	}
+    public function getTemplate(): string
+    {
+        return file_get_contents($this->filePath);
+    }
 }
