@@ -9,6 +9,3 @@ before_script:
 script:
     - vendor/bin/phpunit tests/ --coverage-clover build/logs/clover.xml
     - vendor/bin/phpcs -w -p -s --standard=vendor/flyeralarm/php-code-validator/ruleset.xml src/ tests/
-
-after_success:
-    - php vendor/bin/coveralls
