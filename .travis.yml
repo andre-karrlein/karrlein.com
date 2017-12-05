@@ -1,0 +1,12 @@
+language: php
+
+php:
+    - 7.1
+
+before_script:
+    - composer install --no-interaction --dev
+
+script:
+    - vendor/bin/phpunit tests/
+    - vendor/bin/phpcs -w -p -s --standard=vendor/flyeralarm/php-code-validator/ruleset.xml src/ tests/
+
