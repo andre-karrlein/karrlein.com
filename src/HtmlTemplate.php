@@ -2,7 +2,7 @@
 
 namespace ak1\karrlein;
 
-class HtmlTemplate //implements Template
+class HtmlTemplate
 {
     private $filePath;
 
