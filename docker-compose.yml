@@ -1,0 +1,21 @@
+version: '2'
+services:
+    web:
+        build:
+            context: .
+            dockerfile: docker/nginx/Dockerfile
+        image: karrlein.com/nginx
+        ports:
+            - "80:80"
+        links:
+            - karrlein-php
+        volumes:
+            - ./public:/var/www/code/public
+
+    karrlein-php:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        volumes:
+            - .:/var/www/code
+
