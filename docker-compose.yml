@@ -1,0 +1,30 @@
+version: '2'
+services:
+    karrlein-nginx:
+        build:
+            context: .
+            dockerfile: docker/nginx/Dockerfile
+        image: karrlein/nginx
+        links:
+            - karrlein-php
+        volumes:
+            - ./public:/var/www/code/public
+        networks:
+            - web
+        labels:
+            - "traefik.backend=karrlein.com"
+            - "traefik.frontend.rule=Host:dev.karrlein.com"
+
+    karrlein-php:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        volumes:
+            - .:/var/www/code
+        networks:
+            - web
+
+networks:
+    web:
+        external:
+            name: karrleinbase_webgateway
