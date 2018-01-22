@@ -11,9 +11,6 @@ services:
             - ./public:/var/www/code/public
         networks:
             - web
-        labels:
-            - "traefik.backend=karrlein.com"
-            - "traefik.frontend.rule=Host:dev.karrlein.com"
 
     karrlein-php:
         build:

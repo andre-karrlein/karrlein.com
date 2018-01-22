@@ -1,0 +1,8 @@
+version: '2'
+services:
+    karrlein-nginx:
+        labels:
+            - "traefik.backend=karrlein.com"
+            - "traefik.docker.network=web"
+            - "traefik.frontend.rule=Host:karrlein.com"
+            - "traefik.enable=true"
