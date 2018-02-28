@@ -6,6 +6,11 @@ class Factory
 {
     public function createMainPage(): HtmlTemplate
     {
+        return HtmlTemplate::fromFile(__DIR__ . '/../html/Resume.html');
+    }
+
+    public function createMainPageOld(): HtmlTemplate
+    {
         return HtmlTemplate::fromFile(__DIR__ . '/../html/Index.html');
     }
 }
