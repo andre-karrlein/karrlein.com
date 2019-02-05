@@ -1,7 +1,7 @@
 FROM golang as builder
 
 WORKDIR /go/build/
-COPY server.go .
+COPY karrlein.go .
 
 RUN go get -u golang.org/x/crypto/...
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o karrlein .
