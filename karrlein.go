@@ -17,9 +17,6 @@ func main() {
 }
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
-	if r.TLS == nil {
-		http.Redirect(w, r, "https://www.karrlein.com", 301)
-	}
 	HomePageVars := PageVariables{
 		Name: "André Karrlein",
 	}
