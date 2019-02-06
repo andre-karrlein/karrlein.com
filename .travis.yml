@@ -9,6 +9,9 @@ jobs:
         - stage: build docker image
           script:
               - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+              - export LASTTAG=`wget -q https://registry.hub.docker.com/v1/repositories/karrlein/karrleincom/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: 'END {print $3}'`
               - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
               - docker build -t $DOCKER_USERNAME/karrleincom:$TAG .
-              - docker push $DOCKER_USERNAME/karrleincom
+              - docker push $DOCKER_USERNAME/karrleincom:$TAG
+              - docker tag $DOCKER_USERNAME/karrleincom:$TAG $DOCKER_USERNAME/karrleincom:$LASTTAG
+              - docker push $DOCKER_USERNAME/karrleincom:$LASTTAG
