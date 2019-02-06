@@ -1,7 +1,0 @@
-*.karrlein.com
-cache
-proxy / localhost:8080
-tls andre@karrlein.com {
-    dns digitalocean
-    max_certs 10
-}
