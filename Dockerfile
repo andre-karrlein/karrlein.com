@@ -15,6 +15,7 @@ COPY template.html .
 COPY --from=builder /go/build/karrlein .
 
 EXPOSE 80
+EXPOSE 8080
 EXPOSE 443
 
 CMD ["./karrlein"]
