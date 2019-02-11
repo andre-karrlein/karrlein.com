@@ -9,7 +9,7 @@ jobs:
         - stage: build docker image
           script:
               - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-              - export LASTTAG=1.0.2
+              - export LASTTAG=1.1.0
               - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
               - docker build -t $DOCKER_USERNAME/karrleincom:$TAG .
               - docker push $DOCKER_USERNAME/karrleincom:$TAG
