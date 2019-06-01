@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: karrlein-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: karrlein
+  template:
+    metadata:
+      labels:
+        app: karrlein
+    spec:
+      containers:
+      - name: karrlein-app
+        image: karrlein/karrleincom:1.1.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: karrlein-service
+spec:
+  ports:
+  - name: http
+    targetPort: 8080
+    port: 8080
+  selector:
+    app: karrlein
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: karrlein-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: www.karrlein.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: karrlein-service
+          servicePort: http
+  - host: karrlein.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: karrlein-service
+          servicePort: http
