@@ -12,10 +12,9 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /app/
 COPY public/ public/
 COPY template.html .
+COPY resume.html .
 COPY --from=builder /go/build/karrlein .
 
-EXPOSE 80
 EXPOSE 8080
-EXPOSE 443
 
 CMD ["./karrlein"]
