@@ -9,25 +9,37 @@ type home struct {
 	app.Compo
 }
 
-type navbar struct {
-	app.Compo
-}
-
-// The Render method is where the component appearance is defined. Here, a
-// "Hello World!" is displayed as a heading.
 func (h *home) Render() app.UI {
-	return app.Div().Body(
-		&navbar{},
-		app.H1().Text("Hello World!"),
-	)
-}
-
-func (n *navbar) Render() app.UI {
-	return app.Div().Body(
-		app.H1().
-			Class("navbar").
-			Text("André Karrlein"),
-	)
+	return app.Section().Body(
+		app.Div().Body(
+			app.Header().Body(
+				app.Div().Body(
+					app.Div().Body(
+						app.A().Body(
+							app.Img().Src("https://bulma.io/images/bulma-type-white.png"),
+						).Class("navbar-item"),
+					).Class("navbar-brand"),
+				).Class("container"),
+			).Class("navbar"),
+		).Class("hero-head"),
+		app.Div().Body(
+			app.Div().Body(
+				app.P().Text("André Karrlein.").Class("title"),
+				app.P().Text("I'm a Solution Architect at Red Bull in Salzburg.").Class("subtitle"),
+			).Class("container has-text-centered"),
+		).Class("hero-body"),
+		app.Div().Body(
+			app.Nav().Body(
+				app.Div().Body(
+					app.Ul().Body(
+						app.Li().Body(
+							app.P().Text("André Karrlein ® 2021"),
+						),
+					),
+				).Class("container has-text-centered"),
+			).Class("tabs is-boxed is-fullwidth"),
+		).Class("hero-foot"),
+	).Class("hero is-danger is-fullheight-with-navbar")
 }
 
 // The main function is the entry point of the UI. It is where components are

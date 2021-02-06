@@ -24,7 +24,7 @@ func main() {
 		Title:       "Karrlein.com",
 		Description: "Home of André Karrlein",
 		Styles: []string{
-			"/web/css/main.css", // Loads main.css file.
+			"https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css",
 		},
 	})
 
