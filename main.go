@@ -23,6 +23,9 @@ func main() {
 		Name:        "Karrlein.com",
 		Title:       "Karrlein.com",
 		Description: "Home of André Karrlein",
+		Styles: []string{
+			"/web/css/main.css", // Loads main.css file.
+		},
 	})
 
 	err := http.ListenAndServe(":8080", nil)
