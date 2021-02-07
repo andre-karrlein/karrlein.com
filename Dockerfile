@@ -21,6 +21,9 @@ COPY web/css web/.
 COPY --from=builder /go/build/karrlein .
 COPY --from=builder /go/build/web/app.wasm web/.
 
+RUN ls
+RUN ls web
+
 EXPOSE 8080
 
 CMD ["./karrlein"]
