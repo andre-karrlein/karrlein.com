@@ -1,4 +1,4 @@
-FROM golang as builder
+FROM golang:alpine as builder
 
 WORKDIR /go/build/
 RUN mkdir app
@@ -9,20 +9,18 @@ COPY go.sum .
 COPY Makefile .
 
 RUN go mod download
-RUN make build
+RUN GOARCH=wasm GOOS=js go build -o web/app.wasm app/app.go
+RUN go build -o karrlein
 
 FROM alpine:3.6
 RUN apk --no-cache add ca-certificates
 
 WORKDIR /app/
-RUN mkdir web
+RUN mkdir -p web/css
 
-COPY web/css web/.
+COPY web/css/main.css web/css/.
 COPY --from=builder /go/build/karrlein .
 COPY --from=builder /go/build/web/app.wasm web/.
-
-RUN ls
-RUN ls web
 
 EXPOSE 8080
 
