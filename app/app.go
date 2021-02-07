@@ -50,7 +50,7 @@ func (h *hero) Render() app.UI {
 				app.Div().Body(
 					app.Div().Body(
 						app.A().Body(
-							app.Img().Src("https://storage.googleapis.com/karrlein/karrlein.com/5F5B2A02-52AA-46F9-AED9-78D87B25F31E.jpeg"),
+							app.Img().Src("https://storage.googleapis.com/karrlein/karrlein.com/Logo%20AK_alpha.png"),
 						).Class("navbar-item").Href("/"),
 						&burger{},
 					).Class("navbar-brand"),
