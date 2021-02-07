@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.is-danger {
+  background-color: darkred !important;
+}
+
 .hero .title {
     font-family: 'Kaushan Script', sans-serif;
     transform: rotate(-4deg);
