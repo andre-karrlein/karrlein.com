@@ -7,6 +7,7 @@ COPY go.mod .
 COPY go.sum .
 COPY Makefile .
 
+RUN ls
 RUN go mod download
 RUN make build
 
