@@ -1,12 +1,21 @@
 package main
 
 import (
+	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 
 	"github.com/maxence-charriere/go-app/v7/pkg/app"
 )
+
+type experience struct {
+	Role      string `json:"role"`
+	Company   string `json:"company"`
+	City      string `json:"city"`
+	Timeframe string `json:"timeframe"`
+}
 
 type home struct {
 	app.Compo
@@ -118,10 +127,25 @@ func (home *home) Render() app.UI {
 }
 
 func (resume *resume) Render() app.UI {
-	return app.P().Text(getData())
+	data := getData()
+
+	return app.Div().Body(
+		app.Range(data).Slice(func(i int) app.UI {
+			s := fmt.Sprintf("%s in %s", data[i].Company, data[i].City)
+
+			return app.Div().Body(
+				app.P().Body(
+					app.Strong().Text(data[i].Role),
+					app.Small().Text("  "+data[i].Timeframe),
+					app.Br(),
+					app.Text(s),
+				),
+			).Class("box")
+		}),
+	)
 }
 
-func getData() string {
+func getData() []experience {
 	resp, err := http.Get("https://api.karrlein.com/resume/v1/experience/")
 	if err != nil {
 		log.Fatalln(err)
@@ -132,9 +156,11 @@ func getData() string {
 	}
 	//Convert the body to type string
 	sb := string(body)
-	log.Printf(sb)
 
-	return sb
+	var experiences []experience
+	json.Unmarshal([]byte(sb), &experiences)
+
+	return experiences
 }
 
 // The main function is the entry point of the UI. It is where components are
