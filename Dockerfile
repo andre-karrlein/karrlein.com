@@ -1,13 +1,13 @@
 FROM golang as builder
 
 WORKDIR /go/build/
+RUN mkdir app
 COPY main.go .
-COPY app .
+COPY app/app.go app/.
 COPY go.mod .
 COPY go.sum .
 COPY Makefile .
 
-RUN ls
 RUN go mod download
 RUN make build
 
