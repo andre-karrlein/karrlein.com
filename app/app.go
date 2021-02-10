@@ -59,9 +59,6 @@ func (h *hero) Render() app.UI {
 							app.A().Text(
 								"Resume",
 							).Class("navbar-item").Href("#my-resume"),
-							app.A().Text(
-								"Contact",
-							).Class("navbar-item").Href("mailto:andre@karrlein.com"),
 							app.A().Body(
 								app.Span().Body(
 									app.I().Class("fab fa-twitter"),
