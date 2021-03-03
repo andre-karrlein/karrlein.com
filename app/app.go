@@ -23,24 +23,17 @@ type home struct {
 
 type hero struct {
 	app.Compo
-}
 
-type burger struct {
-	app.Compo
+	active string
 }
 
 type resume struct {
 	app.Compo
 }
 
-func (b *burger) Render() app.UI {
-	return app.Raw(`
-	<span class="navbar-burger" data-target="navbarMenuHero">
-		<span></span>
-		<span></span>
-		<span></span>
-	</span>
-	`)
+func (h *hero) onClick(ctx app.Context, e app.Event) {
+	h.active = "is-active"
+	h.Update()
 }
 
 func (h *hero) Render() app.UI {
@@ -52,7 +45,11 @@ func (h *hero) Render() app.UI {
 						app.A().Body(
 							app.Img().Src("https://storage.googleapis.com/karrlein/karrlein.com/Logo%20AK_alpha.png"),
 						).Class("navbar-item").Href("/"),
-						&burger{},
+						app.Span().Body(
+							app.Span(),
+							app.Span(),
+							app.Span(),
+						).Class("navbar-burger").Class(h.active).OnClick(h.onClick),
 					).Class("navbar-brand"),
 					app.Div().Body(
 						app.Div().Body(
@@ -84,7 +81,7 @@ func (h *hero) Render() app.UI {
 								),
 							).Class("navbar-item").Href("https://github.com/andre-karrlein"),
 						).Class("navbar-end"),
-					).Class("navbar-menu").ID("navbarMenuHero"),
+					).Class("navbar-menu").ID("navbarMenuHero").Class(h.active),
 				).Class("container"),
 			).Class("navbar"),
 		).Class("hero-head"),
@@ -163,6 +160,6 @@ func getData() []experience {
 // The main function is the entry point of the UI. It is where components are
 // associated with URL paths and where the UI is started.
 func main() {
-	app.Route("/", &home{}) // hello component is associated with URL path "/".
-	app.Run()               // Launches the PWA.
+	app.Route("/", &home{})
+	app.Run() // Launches the PWA.
 }
