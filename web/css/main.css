@@ -52,3 +52,7 @@
     letter-spacing: 2px;
     padding-bottom: 30px;
   }
+
+  .navbar-burger {
+    color: white !important
+  }

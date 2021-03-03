@@ -32,7 +32,11 @@ type resume struct {
 }
 
 func (h *hero) onClick(ctx app.Context, e app.Event) {
-	h.active = "is-active"
+	if h.active == "is-active" {
+		h.active = ""
+	} else {
+		h.active = "is-active"
+	}
 	h.Update()
 }
 
