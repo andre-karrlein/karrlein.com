@@ -17,8 +17,10 @@ RUN apk --no-cache add ca-certificates
 
 WORKDIR /app/
 RUN mkdir -p web/css
+RUN mkdir -p web/images
 
 COPY web/css/main.css web/css/.
+COPY web/css/ak_logo_*.png web/images/
 COPY --from=builder /go/build/karrlein .
 COPY --from=builder /go/build/web/app.wasm web/.
 
