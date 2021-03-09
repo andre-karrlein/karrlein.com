@@ -24,9 +24,9 @@ func main() {
 		Title:       "Karrlein.com",
 		Description: "Home of André Karrlein",
 		Icon: app.Icon{
-			Default:    "https://storage.googleapis.com/karrlein/ak_logo_192.png", // Specify default favicon.
-			Large:    "https://storage.googleapis.com/karrlein/ak_logo_512.png", // Specify large favicon
-			AppleTouch: "https://storage.googleapis.com/karrlein/ak_logo_192.png", // Specify icon on IOS devices.
+			Default:    "/web/images/ak_logo_192.png", // Specify default favicon.
+			Large:    "/web/images/ak_logo_512.png", // Specify large favicon
+			AppleTouch: "/web/images/ak_logo_192.png", // Specify icon on IOS devices.
 		},
 		Styles: []string{
 			"https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css",
