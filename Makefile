@@ -1,6 +1,8 @@
 build:
-	GOARCH=wasm GOOS=js go build -o web/app.wasm app/app.go
-	go build -o karrlein
+	@go build -o karrlein ./app
 
-run: build
+wasm:
+	@GOARCH=wasm GOOS=js go build -o web/app.wasm ./app
+
+run: build wasm
 	./karrlein
