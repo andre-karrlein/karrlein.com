@@ -23,6 +23,6 @@ COPY web/images/ak_logo_*.png web/images/
 COPY --from=builder /go/build/karrlein .
 COPY --from=builder /go/build/web/app.wasm web/.
 
-EXPOSE 8080
+EXPOSE 8000
 
 CMD ["./karrlein"]
