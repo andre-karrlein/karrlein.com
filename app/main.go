@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"net/http"
 
 	"github.com/maxence-charriere/go-app/v8/pkg/app"
 )
@@ -10,10 +9,9 @@ import (
 func main() {
 	app.Route("/", &home{})
 	app.Route("/resume", &resume{})
-
 	app.RunWhenOnBrowser()
 
-	http.Handle("/", &app.Handler{
+	err := app.GenerateStaticWebsite(".", &app.Handler{
 		Name:        "Karrlein.com",
 		Title:       "Karrlein.com",
 		Description: "Home of André Karrlein",
@@ -30,7 +28,7 @@ func main() {
 		ThemeColor: "#f74248",
 	})
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err != nil {
 		log.Fatal(err)
 	}
 }
