@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 type home struct {
@@ -9,7 +9,7 @@ type home struct {
 }
 
 func (home *home) Render() app.UI {
-	return app.Body().Body(
+	return app.Div().Class("body").Body(
 		app.Header().Body(
 			&navbar{},
 			app.Div().Class("container").Body(

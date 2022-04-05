@@ -7,7 +7,7 @@
   font-family: 'Poppins',sans-serif;
   transition: all 0.3s ease;
 }
-body{
+.body{
   height: 100vh;;
   width: 100%;
   display: flex;
@@ -17,8 +17,8 @@ body{
   color: #f2f2f2;
   background: #80001e;
 }
-body::before,
-body::after{
+.body::before,
+.body::after{
   content: '';
   position: absolute;
   left: 0;
@@ -26,12 +26,12 @@ body::after{
   height: 100%;
   width: 100%;
 }
-body::before{
+.body::before{
   clip-path: circle(30% at left 20%);
   opacity: 0.4;
   background-image: linear-gradient( 135deg, #80001e 10%, #f74248 100%);
 }
-body::after{
+.body::after{
   opacity: 0.4;
   clip-path: circle(25% at right 80%);
   background-image: linear-gradient( 135deg, #80001e 10%, #f74248 100%);

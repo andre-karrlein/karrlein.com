@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 type resume struct {
@@ -13,7 +13,7 @@ type resume struct {
 func (resume *resume) Render() app.UI {
 	data := getData()
 
-	return app.Body().Body(
+	return app.Div().Class("body").Body(
 		app.Header().Body(
 			&navbar{},
 			app.Div().Class("container").Body(
