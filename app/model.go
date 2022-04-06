@@ -1,12 +1,5 @@
 package main
 
-import (
-	"encoding/json"
-	"io/ioutil"
-	"log"
-	"net/http"
-)
-
 type experience struct {
 	Role      string `json:"role"`
 	Company   string `json:"company"`
@@ -15,19 +8,32 @@ type experience struct {
 }
 
 func getData() []experience {
-	resp, err := http.Get("https://api.karrlein.com/resume/v1/experience/")
-	if err != nil {
-		log.Fatalln(err)
+	experiences := []experience{
+		{
+			Role:      "Solution Architect",
+			Company:   "Red Bull",
+			City:      "Salzburg",
+			Timeframe: "April 2020 - now",
+		},
+		{
+			Role:      "Senior Software Engineer",
+			Company:   "FLYERALARM",
+			City:      "Würzburg",
+			Timeframe: "June 2018 - April 2020",
+		},
+		{
+			Role:      "Lead Developer",
+			Company:   "FLYERALARM",
+			City:      "Würzburg",
+			Timeframe: "October 2017 - June 2018",
+		},
+		{
+			Role:      "Software Engineer",
+			Company:   "FLYERALARM",
+			City:      "Würzburg",
+			Timeframe: "August 2016 - October 2017",
+		},
 	}
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	//Convert the body to type string
-	sb := string(body)
-
-	var experiences []experience
-	json.Unmarshal([]byte(sb), &experiences)
 
 	return experiences
 }
