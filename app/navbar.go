@@ -17,7 +17,7 @@ func (navbar *navbar) Render() app.UI {
 		),
 		app.Ul().Class("menu").Body(
 			app.Li().Body(
-				app.A().Href("/resume").Text("Resume"),
+				app.A().Href("/resume.html").Text("Resume"),
 			),
 			app.Li().Body(
 				app.A().Href("https://github.com/andre-karrlein").Text("Github"),
