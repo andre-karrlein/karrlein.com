@@ -8,7 +8,7 @@ import (
 
 func main() {
 	app.Route("/", &home{})
-	app.Route("/resume", &resume{})
+	app.Route("/resume.html", &resume{})
 	app.RunWhenOnBrowser()
 
 	err := app.GenerateStaticWebsite(".", &app.Handler{
