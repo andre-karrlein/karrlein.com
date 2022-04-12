@@ -20,7 +20,7 @@ func (home *home) Render() app.UI {
 						app.P().Text("SOLUTION ARCHITECT AT RED BULL IN SALZBURG, AUSTRIA."),
 					),
 					app.Div().Class("img-box").Body(
-						app.Img().Src("https://storage.googleapis.com/karrlein/karrlein.com/me_512_512.png"),
+						app.Img().Src("/web/images/me_512_512.png"),
 					),
 				),
 			),

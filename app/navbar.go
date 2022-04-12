@@ -12,7 +12,7 @@ func (navbar *navbar) Render() app.UI {
 	return app.Nav().Class("navbar").Body(
 		app.Div().Class("logo").Body(
 			app.A().Href("/").Body(
-				app.Img().Width(80).Src("https://storage.googleapis.com/karrlein/karrlein.com/Logo%20AK_alpha.png"),
+				app.Img().Width(80).Src("/web/images/Logo_AK_alpha.png"),
 			),
 		),
 		app.Ul().Class("menu").Body(
