@@ -22,7 +22,7 @@ func main() {
 				Large:      "/web/images/ak_logo_512.png", // Specify large favicon
 				AppleTouch: "/web/images/ak_logo_192.png", // Specify icon on IOS devices.
 			},
-			Resources: app.GitHubPages("karrlein"),
+			Resources: app.GitHubPages("karrlein.com"),
 			Styles: []string{
 				"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css",
 				"/web/css/style.css",
