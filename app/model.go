@@ -55,15 +55,15 @@ func getClimateData() []climateData {
 		},
 		{
 			Heading: "Grünes Wachstum",
-			Content: "Ich sehe den Klimawandel als Chance für grünes Wachstum und fördern Investitionen in nachhaltige Technologien und Arbeitsplätze.",
+			Content: "Ich sehe den Klimawandel als Chance für grünes Wachstum und es sollen Investitionen in nachhaltige Technologien und Arbeitsplätze gefördert werden.",
 		},
 		{
 			Heading: "Mobilität",
-			Content: "Anstreben einer schrittweise Abschaffung von Verbrennungsmotoren zugunsten von emissionsfreien Alternativen wie Elektroantriben.",
+			Content: "Anstreben einer schrittweise Abschaffung von Verbrennungsmotoren zugunsten von emissionsfreien Alternativen wie Elektroantrieben.",
 		},
 		{
 			Heading: "Heizen",
-			Content: "Für die Umstellung von fossilen Brennstoffen auf erneuerbare Energien in der Gebäudeheizung einsetzen , um den CO2-Ausstoß zu reduzieren und die Energiewende voranzutreiben.",
+			Content: "Für die Umstellung von fossilen Brennstoffen auf erneuerbare Energien in der Gebäudeheizung einsetzen, um den CO2-Ausstoß zu reduzieren und die Energiewende voranzutreiben.",
 		},
 	}
 
