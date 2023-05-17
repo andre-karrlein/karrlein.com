@@ -26,9 +26,6 @@ func (navbar *navbar) Render() app.UI {
 				app.A().Href("/imprint.html").Text("Impressum"),
 			),
 			app.Li().Body(
-				app.A().Href("https://github.com/andre-karrlein").Text("Github"),
-			),
-			app.Li().Body(
 				app.A().Href("https://twitter.com/rb_ak1").Text("Twitter"),
 			),
 			app.Li().Body(
