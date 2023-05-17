@@ -10,6 +10,8 @@ import (
 func main() {
 	app.Route("/", &home{})
 	app.Route("/resume.html", &resume{})
+	app.Route("/climate.html", &climate{})
+	app.Route("/imprint.html", &imprint{})
 	app.RunWhenOnBrowser()
 
 	if os.Getenv("GITHUB") == "TRUE" {

@@ -20,6 +20,12 @@ func (navbar *navbar) Render() app.UI {
 				app.A().Href("/resume.html").Text("Resume"),
 			),
 			app.Li().Body(
+				app.A().Href("/climate.html").Text("Klima"),
+			),
+			app.Li().Body(
+				app.A().Href("/imprint.html").Text("Impressum"),
+			),
+			app.Li().Body(
 				app.A().Href("https://github.com/andre-karrlein").Text("Github"),
 			),
 			app.Li().Body(
