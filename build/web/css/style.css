@@ -57,14 +57,14 @@ header .navbar{
   margin: 0 6px;
 }
 .navbar .menu a{
-  color: #000;
+  color: white;
   text-decoration: none;
   font-size: 17px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 .navbar .menu a:hover{
-  color: #f2f2f2;
+  color: #f74248;
 }
  header .text-content{
    width: 40%;
@@ -93,6 +93,7 @@ header .navbar{
   margin-top: -5px !important;
 }
 .resume {
+  color: white;
   height: 60vh;
   overflow-y: scroll;
   margin-left: 3%;
