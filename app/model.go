@@ -7,7 +7,7 @@ type experience struct {
 	Timeframe string `json:"timeframe"`
 }
 
-type climateData struct {
+type politicsData struct {
 	Heading string `json:"heading"`
 	Content string `json:"content"`
 }
@@ -43,8 +43,8 @@ func getData() []experience {
 	return experiences
 }
 
-func getClimateData() []climateData {
-	climateData := []climateData{
+func getPoliticsData() []politicsData {
+	politicsData := []politicsData{
 		{
 			Heading: "Klimaschutz",
 			Content: "Für eine ambitionierte Klimapolitik einsetzen, um katastrophale Auswirkungen des Klimawandels zu verhindern.",
@@ -67,5 +67,5 @@ func getClimateData() []climateData {
 		},
 	}
 
-	return climateData
+	return politicsData
 }

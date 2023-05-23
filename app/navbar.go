@@ -20,7 +20,7 @@ func (navbar *navbar) Render() app.UI {
 				app.A().Href("/resume.html").Text("Resume"),
 			),
 			app.Li().Body(
-				app.A().Href("/climate.html").Text("Klima"),
+				app.A().Href("/politics.html").Text("Politik"),
 			),
 			app.Li().Body(
 				app.A().Href("/imprint.html").Text("Impressum"),
