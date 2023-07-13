@@ -68,6 +68,7 @@ header .navbar{
 }
  header .text-content{
    width: 40%;
+   color: white;
  }
 .text-content h2{
   font-size: 27px;
