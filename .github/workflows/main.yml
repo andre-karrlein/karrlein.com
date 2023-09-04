@@ -12,18 +12,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - uses: actions/setup-go@v3
-      with:
-        go-version: '^1.17'
-
-    - name: Build wasm file
-      run: GOARCH=wasm GOOS=js go build -o build/web/app.wasm ./app
-
-    - name: Build app file
-      run: go build -o build/app ./app
-
-    - name: Generate Website
-      run: cd build && ./app && rm ./app
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -33,4 +21,4 @@ jobs:
         aws-region: eu-central-1
 
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync ./build/ s3://karrlein.com --delete
+      run: aws s3 sync . s3://karrlein.com --delete

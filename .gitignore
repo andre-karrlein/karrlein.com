@@ -1,8 +1,1 @@
-build/app
-build/app-worker.js
-build/app.css
-build/app.js
-build/index.html
-build/manifest.webmanifest
-build/wasm_exec.js
-build/web/app.wasm
+.vscode
