@@ -20,5 +20,11 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-central-1
 
-    - name: Deploy static site to S3 bucket
-      run: aws s3 sync . s3://karrlein.com --delete
+    - name: Deploy main site to S3 bucket
+      run: aws s3 sync main/. s3://karrlein.com --delete
+      
+    - name: Deploy motorsport site to S3 bucket
+      run: aws s3 sync motorsport/. s3://motorsport.karrlein.com --delete 
+      
+    - name: Deploy politics site to S3 bucket
+      run: aws s3 sync politik/. s3://politik.karrlein.com --delete 
