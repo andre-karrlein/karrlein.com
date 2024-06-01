@@ -4,6 +4,49 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// URL of the API you want to fetch data from
+const apiUrl = 'https://api.pitskill.io/api/statistics/seasonalStats/14874';
+
+// Function to fetch data from the API and display it in the paragraph
+async function fetchData() {
+    try {
+        // Fetch data from the API
+        const response = await fetch(apiUrl);
+        
+        // Check if the response is okay
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        
+        // Parse the JSON data
+        const data = await response.json();
+        const payload = data.payload;
+        
+        const starts = document.getElementById('starts');
+        starts.innerHTML = payload.total_races;
+        
+        const wins = document.getElementById('wins');
+        wins.innerHTML = payload.wins;
+        
+        const top_10 = document.getElementById('top_10');
+        top_10.innerHTML = payload.top10;
+        
+        const best = document.getElementById('best');
+        best.innerHTML = payload.best_position;
+        
+        const laps = document.getElementById('laps');
+        laps.innerHTML = payload.laps_completed;
+        
+        const distance = document.getElementById('distance');
+        distance.innerHTML = payload.km_driven + " km";
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+// Call the fetchData function when the page loads
+window.onload = fetchData;
+
 (function($) {
 
 	var	$window = $(window),

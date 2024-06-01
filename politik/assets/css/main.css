@@ -272,9 +272,9 @@ button
 .content-area
 {
     position: relative;
-    left: 0;
+    left: 30%;
 
-    width: 100%;
+    width: 75%;
 }
 
 .content-area .content-area-inner
