@@ -5,10 +5,10 @@
 */
 
 // URL of the API you want to fetch data from
-const apiUrl = 'https://api.pitskill.io/api/statistics/seasonalStats/14874';
+//const apiUrl = 'https://api.pitskill.io/api/statistics/seasonalStats/14874';
 
 // Function to fetch data from the API and display it in the paragraph
-async function fetchData() {
+/*async function fetchData() {
     try {
         // Fetch data from the API
         const response = await fetch(apiUrl);
@@ -42,10 +42,10 @@ async function fetchData() {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-}
+}*/
 
 // Call the fetchData function when the page loads
-window.onload = fetchData;
+//window.onload = fetchData;
 
 (function($) {
 
