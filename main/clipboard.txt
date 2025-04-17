@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impressum – André Karrlein</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#6b21a8',
+              accent: '#ff375f',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased">
+    <!-- Header -->
+    <header class="py-6 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 sticky top-0 z-30">
+      <div class="container mx-auto flex items-center justify-between px-6">
+        <a href="index.html" class="text-xl font-bold text-primary">AK</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html#career" class="hover:text-primary">Career</a>
+          <a href="politik.html" class="hover:text-primary">Politik</a>
+          <a href="motorsport.html" class="hover:text-primary">Motorsport</a>
+          <a href="index.html#simracing" class="hover:text-primary">Sim Racing</a>
+          <a href="index.html#referee" class="hover:text-primary">Referee</a>
+          <a href="impressum.html" class="text-primary font-semibold">Impressum</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Impressum Content -->
+    <main class="container mx-auto px-6 py-20 max-w-3xl space-y-12">
+      <h1 class="text-4xl font-bold text-center text-primary">Impressum</h1>
+      <section class="space-y-6">
+        <h2 class="text-2xl font-semibold">Angaben gemäß § 5 TMG</h2>
+        <p>
+          André Karrlein<br />
+          Münchener Str. 25 F<br />
+          83395 Freilassing
+        </p>
+      </section>
+      <section class="space-y-6">
+        <h2 class="text-2xl font-semibold">Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:info@karrlein.com" class="text-primary underline">info@karrlein.com</a><br />
+          Telefon: <a href="tel:+49861234567" class="text-primary underline">+49 861 234567</a>
+        </p>
+      </section>
+      <section class="space-y-6">
+        <h2 class="text-2xl font-semibold">Verantwortlich für den Inhalt</h2>
+        <p>
+          André Karrlein<br />
+          Anschrift wie oben
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-gray-800 text-center">
+      <div class="container mx-auto px-6">
+        <p class="text-sm text-gray-500 dark:text-gray-400">© 2025 André Karrlein. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
