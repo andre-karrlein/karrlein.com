@@ -1,280 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>André Karrlein – Politik</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#6b21a8',
+              accent:  '#ff375f',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased">
+    <!-- Header -->
+    <header class="py-6 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 sticky top-0 z-30">
+      <div class="container mx-auto flex items-center justify-between px-6">
+        <a href="https://www.karrlein.com" class="text-xl font-bold text-primary">AK</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="https://www.karrlein.com#career" class="hover:text-primary">Career</a>
+          <a href="https://www.karrlein.com#politics" class="text-primary font-semibold">Politics</a>
+          <a href="https://www.karrlein.com#simracing" class="hover:text-primary">Sim Racing</a>
+          <a href="https://www.karrlein.com#referee" class="hover:text-primary">Referee</a>
+        </nav>
+      </div>
+    </header>
 
-<html lang="en">
-   
-   
-    <head>
-       
-       
-        <!-- META -->
-        <meta charset="utf-8">
-        <meta name="robots" content="noodp">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-       
-        <!-- PAGE TITLE -->
-        <title>Gruene | Andre Karrlein</title>
-       
-        <!-- FONTS -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
-       
-        <!-- STYLESHEETS -->
-        <link rel="stylesheet" type="text/css" href="assets/css/plugins.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-        
-        
-    </head>
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <!-- Background Image with Blur -->
+      <div class="absolute inset-0 bg-cover bg-center filter blur-sm" style="background-image: url('/assets/background.jpg');"></div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/40"></div>
+      <!-- Content -->
+      <div class="relative text-center px-6">
+        <h1 class="text-5xl font-extrabold mb-4 text-primary">André Karrlein – Politik</h1>
+        <p class="text-lg text-gray-100">
+          Über mich &amp; meine politischen Schwerpunkte
+        </p>
+      </div>
+    </section>
 
-   
-    <body>
-    
-       
-        <!-- PRELOADER -->
-        <div class="preloader">
-           
-            <div class="spinner"></div>
-            
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-20 max-w-5xl space-y-20">
+      <!-- About Me Section -->
+      <section id="über-mich" class="space-y-6">
+        <h2 class="text-3xl font-bold text-center">Über mich</h2>
+        <div class="prose prose-lg dark:prose-invert mx-auto">
+          <p>
+            Als leidenschaftlicher Familienvater und Fachmann im Technologie-Sektor, speziell in der IT, bringe ich nicht nur eine fundierte Expertise, sondern auch eine starke familiäre Verbundenheit in meine politischen Ambitionen ein.
+          </p>
+          <p>
+            Ich bin großer Verfechter grüner Politik. Engagiert setze ich mich für eine nachhaltige Zukunft ein, die auf ökologischer Verantwortung, sozialer Gerechtigkeit und dem Schutz unserer Demokratie basiert. Mein Ziel ist es, durch konkrete Maßnahmen und progressive Ideen einen positiven Wandel in unserer Gesellschaft und in Europa zu bewirken. Begleiten Sie mich auf meinem Weg zu einer lebenswerten und zukunftsfähigen Welt für uns alle!
+          </p>
         </div>
-        <!-- /PRELOADER -->
-    
-        
-        <!-- IMAGE CONTAINER -->
-        <div class="image-container">
-           
-            <div class="background-img"></div>
+      </section>
 
+      <!-- Meine Politik Section -->
+      <section id="meine-politik" class="space-y-6">
+        <h2 class="text-3xl font-bold text-center">Meine Politik</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">Mobilität / Verkehr</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Ich setze mich für eine schrittweise Abschaffung von Verbrennungsmotoren zugunsten emissionsfreier Alternativen wie Elektroantriebe ein. Durch eine nachhaltige Verkehrspolitik können wir nicht nur unseren CO₂-Ausstoß drastisch reduzieren, sondern auch die Lebensqualität in unseren Städten erhöhen. Ein starker und effizienter öffentlicher Personennahverkehr (ÖPNV) ist essenziell, um Verkehrsprobleme zu lösen und umweltfreundliche Mobilität für alle zugänglich zu machen.
+            </p>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">Energiewende</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Die rasche Umstellung auf erneuerbare Energien ist entscheidend, um fossile Brennstoffe zu reduzieren und eine nachhaltige Zukunft zu sichern. Ich engagiere mich für innovative Lösungen und Investitionen in grüne Technologien, um die Energiewende voranzutreiben und unseren Planeten für zukünftige Generationen zu schützen.
+            </p>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">EU</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Ein starkes und vereintes Europa ist der Schlüssel zu einer friedlichen und prosperierenden Zukunft. Ich unterstütze Maßnahmen, die die europäische Zusammenarbeit stärken und die EU handlungsfähiger machen, um globale Herausforderungen wie den Klimawandel und soziale Ungleichheit effektiv anzugehen.
+            </p>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">Digital</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Als IT-Experte liegt mir die digitale Transformation besonders am Herzen. Ich setze mich für den Ausbau digitaler Infrastrukturen und die Förderung von Innovationen ein, um unsere Wirtschaft zu stärken und den Zugang zu modernen Technologien für alle zu gewährleisten. Themen wie Künstliche Intelligenz (KI) erfordern klare Regulierung, Sicherheit und eine umfassende Bildungsoffensive, um die Chancen zu maximieren und die Risiken zu minimieren.
+            </p>
+          </div>
         </div>
-        <!-- /IMAGE CONTAINER -->
+      </section>
+    </main>
 
-
-        <!-- CONTENT AREA -->
-        <div class="content-area">
-
-
-            <!-- CONTENT AREA INNER --> 
-            <div class="content-area-inner">
-
-
-                <!-- INTRO -->
-                <section id="intro">
-
-
-                    <!-- CONTAINER MID -->
-                    <div class="container-mid">
-
-                       
-                        <!-- ANIMATION CONTAINER -->
-                        <div class="animation-container animation-fade-right" data-animation-delay="0">
-                        
-                            <h1>André Karrlein.</h1>
-                        
-                        </div>
-                        <!-- /ANIMATION CONTAINER -->
-                        
-                        
-                        <!-- ANIMATION CONTAINER -->
-                        <div class="animation-container animation-fade-right" data-animation-delay="200">
-                           
-                            <a href="#about" class="smooth-scroll">Mehr<div class="circle"><i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-down" aria-hidden="true"></i></div></a>
-                            
-                        </div>
-                        <!-- /ANIMATION CONTAINER -->
-
-
-                    </div>
-                    <!-- /CONTAINER MID -->
-
-
-                </section>
-                <!-- /INTRO -->
-
-
-                <!-- ABOUT -->
-                <section id="about">
-
-
-                    <h3 class="headline scroll-animated">Über mich</h3>
-                    
-                    <p class="scroll-animated">Als leidenschaftlicher Familienvater und Fachmann im Technologie-Sektor, speziell in der IT, bringe ich nicht nur eine fundierte Expertise, sondern auch eine starke familiäre Verbundenheit in meine politischen Ambitionen ein.</p>
-
-                    <p class="scroll-animated">Ich bin großer Verfechter grüner Politik. Engagiert setze ich mich für eine nachhaltige Zukunft ein, die auf ökologischer Verantwortung, sozialer Gerechtigkeit und dem Schutz unserer Demokratie basiert. Mein Ziel ist es, durch konkrete Maßnahmen und progressive Ideen einen positiven Wandel in unserer Gesellschaft und in Europa zu bewirken. Begleiten Sie mich auf meinem Weg zu einer lebenswerten und zukunftsfähigen Welt für uns alle!</p>
-                    
-
-
-                </section>
-                <!-- /ABOUT -->
-                
-                
-                <!-- SERVICE -->
-                <section id="service">
-
-
-                    <h3 class="headline scroll-animated">Meine Politik</h3>
-                    
-                    
-                    <!-- SERVICE LIST -->
-                    <ul class="services-list">
-                       
-                       
-                        <!-- SERVICE ITEM -->
-                        <li class="service-item scroll-animated">
-                           
-                           
-                            <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapse-item-1" aria-expanded="false">Mobilität / Verkehr</button>
-                            
-                            
-                            <!-- COLLAPSE CONTENT -->
-                            <div class="collapse" id="collapse-item-1">
-                               
-                               
-                                <!-- COLLAPSE CONTENT INNER -->
-                                <div class="well">
-                                   
-                                    <p> Ich setze mich für eine schrittweise Abschaffung von Verbrennungsmotoren zugunsten emissionsfreier Alternativen wie Elektroantriebe ein. Durch eine nachhaltige Verkehrspolitik können wir nicht nur unseren CO2-Ausstoß drastisch reduzieren, sondern auch die Lebensqualität in unseren Städten erhöhen. Ein starker und effizienter öffentlicher Personennahverkehr (ÖPNV) ist essenziell, um Verkehrsprobleme zu lösen und umweltfreundliche Mobilität für alle zugänglich zu machen.</p>
-                                    
-                                </div>
-                                <!-- /COLLAPSE CONTENT INNER -->
-                                
-                                
-                            </div>
-                            <!-- /COLLAPSE CONTENT -->
-                            
-                            
-                        </li>
-                        <!-- /SERVICE ITEM -->
-                        
-                        
-                        <!-- SERVICE ITEM -->
-                        <li class="service-item scroll-animated">
-                           
-                           
-                            <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapse-item-2" aria-expanded="false">Energiewende</button>
-                            
-                            
-                            <!-- COLLAPSE CONTENT -->
-                            <div class="collapse" id="collapse-item-2">
-                               
-                               
-                                <!-- COLLAPSE CONTENT INNER -->
-                                <div class="well">
-                                   
-                                    <p> Die rasche Umstellung auf erneuerbare Energien ist entscheidend, um fossile Brennstoffe zu reduzieren und eine nachhaltige Zukunft zu sichern. Ich engagiere mich für innovative Lösungen und Investitionen in grüne Technologien, um die Energiewende voranzutreiben und unseren Planeten für zukünftige Generationen zu schützen.</p>
-                                    
-                                </div>
-                                <!-- /COLLAPSE CONTENT INNER -->
-                                
-                                
-                            </div>
-                            <!-- /COLLAPSE CONTENT -->
-                            
-                            
-                        </li>
-                        <!-- /SERVICE ITEM -->
-                        
-                        
-                        <!-- SERVICE ITEM -->
-                        <li class="service-item scroll-animated">
-                           
-                           
-                            <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapse-item-3" aria-expanded="false">EU</button>
-                            
-                            
-                            <!-- COLLAPSE CONTENT -->
-                            <div class="collapse" id="collapse-item-3">
-                               
-                               
-                                <!-- COLLAPSE CONTENT INNER -->
-                                <div class="well">
-                                   
-                                    <p> Ein starkes und vereintes Europa ist der Schlüssel zu einer friedlichen und prosperierenden Zukunft. Ich unterstütze Maßnahmen, die die europäische Zusammenarbeit stärken und die EU handlungsfähiger machen, um globale Herausforderungen wie den Klimawandel und soziale Ungleichheit effektiv anzugehen.</p>
-                                    
-                                </div>
-                                <!-- /COLLAPSE CONTENT INNER -->
-                                
-                                
-                            </div>
-                            <!-- /COLLAPSE CONTENT -->
-                            
-                            
-                        </li>
-                        <!-- /SERVICE ITEM -->
-                        
-                        
-                        <!-- SERVICE ITEM -->
-                        <li class="service-item scroll-animated">
-                           
-                           
-                            <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapse-item-4" aria-expanded="false">Digital</button>
-                            
-                            
-                            <!-- COLLAPSE CONTENT -->
-                            <div class="collapse" id="collapse-item-4">
-                               
-                               
-                                <!-- COLLAPSE CONTENT INNER -->
-                                <div class="well">
-                                   
-                                    <p> Als IT-Experte liegt mir die digitale Transformation besonders am Herzen. Ich setze mich für den Ausbau digitaler Infrastrukturen und die Förderung von Innovationen ein, um unsere Wirtschaft zu stärken und den Zugang zu modernen Technologien für alle zu gewährleisten. Themen wie Künstliche Intelligenz (KI) erfordern klare Regulierung, Sicherheit und eine umfassende Bildungsoffensive, um die Chancen zu maximieren und die Risiken zu minimieren.</p>
-                                    
-                                </div>
-                                <!-- /COLLAPSE CONTENT INNER -->
-                                
-                                
-                            </div>
-                            <!-- /COLLAPSE CONTENT -->
-                            
-                            
-                        </li>
-                        <!-- /SERVICE ITEM -->
-                        
-                        
-                    </ul>
-                    <!-- /SERVICE LIST -->
-
-
-                </section>
-                <!-- /SERVICE -->
-                
-                
-                
-                <!-- FOOTER -->
-                <section id="footer">
-                
-                   
-                    <!-- SOCIAL ICONS -->
-                    <ul class="social-icons scroll-animated">
-                       
-                       
-                        <li><a href="https://www.instagram.com/rb_ak1/"><i class="fa fa-instagram" aria-hidden="true"></i><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="ttps://www.threads.net/@rb_ak1"><i class="fa fa-at" aria-hidden="true"></i><i class="fa fa-at" aria-hidden="true"></i></a></li>
-                        <li><a href="https://linkedin.com/in/andré-karrlein-81879417a"><i class="fa fa-linkedin" aria-hidden="true"></i><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        
-                        
-                        
-                    </ul>
-                    <!-- /SOCIAL ICONS -->
-                    
-
-                    <p class="scroll-animated">© 2024 André Karrlein | Design by <a href="https://templatefoundation.com">Template Foundation</a></p>
-
-
-                </section>
-                <!-- /FOOTER -->
-
-
-            </div>
-            <!-- /CONTENT AREA INNER -->
-
-
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-gray-800 text-center">
+      <div class="container mx-auto px-6">
+        <h3 class="text-xl font-semibold mb-4">Connect with me</h3>
+        <div class="flex justify-center space-x-6 text-2xl mb-6">
+          <a href="https://www.linkedin.com/in/andrekarrlein" target="_blank" class="hover:text-primary"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/andre.karrlein" target="_blank" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.threads.net/@andre.karrlein" target="_blank" class="hover:text-primary"><i class="fab fa-threads"></i></a>
         </div>
-        <!-- /CONTENT AREA -->
-        
-        
-        <!-- JAVASCRIPTS -->
-        <script type="text/javascript" src="assets/js/plugins.js"></script>
-        <script type="text/javascript" src="assets/js/main.js"></script>
-   
-   
-    </body> 
-    
-    
+        <p class="text-sm text-gray-500 dark:text-gray-400">© 2025 André Karrlein. All rights reserved.</p>
+        <p class="text-sm mt-2"><a href="impressum.html" class="hover:text-primary">Impressum</a></p>
+      </div>
+    </footer>
+  </body>
 </html>

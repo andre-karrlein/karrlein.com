@@ -1,181 +1,130 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Karrlein Motorsport</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>André Karrlein – Motorsport</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#6b21a8',
+              accent:  '#ff375f',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Driver</a></li>
-							<li><a href="#two">Current Stats</a></li>
-							<!--<li><a href="#three">Get in touch</a></li>-->
-						</ul>
-					</nav>
-				</div>
-			</section>
+  <body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased">
+    <!-- Header -->
+    <header class="py-6 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 sticky top-0 z-30">
+      <div class="container mx-auto flex items-center justify-between px-6">
+        <a href="https://www.karrlein.com" class="text-xl font-bold text-primary">AK</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="https://www.karrlein.com#career" class="hover:text-primary">Career</a>
+          <a href="https://www.karrlein.com#politics" class="hover:text-primary">Politics</a>
+          <a href="https://www.karrlein.com#simracing" class="hover:text-primary">Sim Racing</a>
+          <a href="https://www.karrlein.com#referee" class="hover:text-primary">Referee</a>
+          <a href="#" class="text-primary font-semibold">Motorsport</a> 
+          <a href="impressum.html" class="hover:text-primary">Impressum</a>
+        </nav>
+      </div>
+    </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div class="text-center px-6">
+        <h1 class="text-5xl font-extrabold mb-4 text-primary">Karrlein Motorsport</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Discover who I am and track my racing performance at a glance.
+        </p>
+      </div>
+    </section>
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Karrlein Motorsport</h1>
-							<p>Simracing in Le Mans Ultimate: Hypercar, LMP2 and GTE</p>
-							<!--<span class="image fit"><img style="height: 500px; width: auto;" src="images/car.jpg" alt="" /></span>-->
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-20 max-w-5xl space-y-20">
+      <!-- About Me Section -->
+      <section id="about-me" class="space-y-6">
+        <h2 class="text-3xl font-bold text-center">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <img
+            src="/assets/andre.jpeg"
+            alt="André Karrlein at the track"
+            class="w-64 h-64 rounded-2xl shadow-lg object-cover mx-auto"
+          />
+          <div class="text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
+            <p>
+              My journey into racing began with <em>Gran Turismo</em>, where I first discovered my love for racing games. From there, I transitioned into sim racing with <em>Assetto Corsa</em> and eventually focused on GT3 racing in <em>Assetto Corsa Competizione</em>. Recently, I’ve shifted my focus to endurance racing in <em>Le Mans Ultimate</em>, where I’m now fully immersed in online competitions. Competing in Le Mans Ultimate has brought new challenges and keeps me connected with the dynamic sim racing community.
+            </p>
+            <p>
+              <strong>Age:</strong> 32<br />
+              <strong>Country:</strong> 🇦🇹
+            </p>
+          </div>
+        </div>
+      </section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<div class="content">
-								<div class="inner">
-									<h2>Driver</h2>
-									<h3>Andre Karrlein</h3>
-									<!--<embed type="text/html" src="https://pitskill.io/mfe/licence-card/14874"  width="500" height="400">-->
-									<ul class="actions">
-										<li><a href="ak44.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+      <!-- Racing Stats Section (populated from CSV) -->
+      <section id="racing-stats" class="space-y-6">
+        <h2 class="text-3xl font-bold text-center">Racing Stats</h2>
+        <div id="stats-grid" class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+          <!-- Stats cards inserted here -->
+        </div>
+      </section>
+    </main>
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Stats</h2>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-flag-checkered"></span>
-									<h3>Starts</h3>
-									<p id="starts">25</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-trophy"></span>
-									<h3>Wins</h3>
-									<p id="wins">1</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-sort-numeric-up"></span>
-									<h3>Top 10</h3>
-									<p id="top_10">9</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-medal"></span>
-									<h3>Best Finish</h3>
-									<p id="best">1</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-circle-notch"></span>
-									<h3>Total Laps</h3>
-									<p id="laps">242</p>
-								</section>
-								<section>
-									<span class="icon major fa-long-arrow-alt-up"></span>
-									<h3>Distance Raced</h3>
-									<p id="distance">1300 km</p>
-								</section>
-							</div>
-						</div>
-					</section>
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-gray-800 text-center">
+      <div class="container mx-auto px-6">
+        <h3 class="text-xl font-semibold mb-4">Connect with me</h3>
+        <div class="flex justify-center space-x-6 text-2xl mb-6">
+          <a href="https://www.linkedin.com/in/andrekarrlein" target="_blank" class="hover:text-primary"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/andre.karrlein" target="_blank" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.threads.net/@andre.karrlein" target="_blank" class="hover:text-primary"><i class="fab fa-threads"></i></a>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400">© 2025 André Karrlein. All rights reserved.</p>
+        <p class="text-sm mt-2"><a href="impressum.html" class="hover:text-primary">Impressum</a></p>
+      </div>
+    </footer>
 
-				<!-- Three -->
-					<!--<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>-->
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Karrlein Motorsport. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Script: Load stats from CSV -->
+    <script>
+      window.addEventListener('DOMContentLoaded', async () => {
+        const grid = document.getElementById('stats-grid');
+        try {
+          const response = await fetch('./data/stats.csv');
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const text = await response.text();
+          const lines = text.trim().split(/\r?\n/);
+          lines.forEach((line) => {
+            const [label, value] = line.split(',');
+            const card = document.createElement('div');
+            const h3 = document.createElement('h3');
+            h3.textContent = value;
+            h3.className = 'text-4xl font-extrabold text-primary';
+            const p = document.createElement('p');
+            p.textContent = label;
+            p.className = 'text-gray-600 dark:text-gray-300';
+            card.appendChild(h3);
+            card.appendChild(p);
+            grid.appendChild(card);
+          });
+        } catch (e) {
+          console.error('Failed to load stats:', e);
+        }
+      });
+    </script>
+  </body>
 </html>
