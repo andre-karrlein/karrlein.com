@@ -1,193 +1,360 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>André Karrlein</title>
 
-    <!-- Tailwind via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Tailwind custom palette & enable class‑based dark mode
-      tailwind.config = {
-        darkMode: 'class', // allow toggling via .dark class
-        theme: {
-          extend: {
-            colors: {
-              primary: '#6b21a8', // dark purple
-              accent:  '#ff375f', // vibrant pink‑red accent
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>André Karrlein </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#3e4040",
+                        "surface-bright": "#2c2c2c",
+                        "error-container": "#9f0519",
+                        "primary-fixed": "#A855F7",
+                        "secondary-fixed-dim": "#d4d4d4",
+                        "on-surface": "#ffffff",
+                        "background": "#000000",
+                        "outline": "#757575",
+                        "surface-container": "#191919",
+                        "primary": "#A855F7",
+                        "primary-container": "#A855F7",
+                        "on-primary-fixed": "#ffffff",
+                        "on-tertiary-fixed": "#515050",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#f9f9f9",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#000000",
+                        "on-secondary": "#505252",
+                        "on-primary-container": "#ffffff",
+                        "on-error": "#490006",
+                        "outline-variant": "#484848",
+                        "surface-variant": "#262626",
+                        "secondary-container": "#454747",
+                        "tertiary-dim": "#edeaea",
+                        "surface-container-low": "#131313",
+                        "on-tertiary-container": "#575656",
+                        "primary-dim": "#9333EA",
+                        "on-error-container": "#ffa8a3",
+                        "secondary-dim": "#d4d4d4",
+                        "on-surface-variant": "#ababab",
+                        "surface-container-high": "#1f1f1f",
+                        "tertiary": "#fcf9f8",
+                        "tertiary-container": "#edeaea",
+                        "inverse-primary": "#7e22ce",
+                        "on-background": "#ffffff",
+                        "surface-tint": "#A855F7",
+                        "inverse-on-surface": "#555555",
+                        "tertiary-fixed-dim": "#f3f0ef",
+                        "primary-fixed-dim": "#9333EA",
+                        "surface-dim": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#6e6d6d",
+                        "error": "#ff716c",
+                        "tertiary-fixed": "#ffffff",
+                        "error-dim": "#d7383b",
+                        "on-primary-fixed-variant": "#7e22ce",
+                        "on-secondary-fixed-variant": "#5a5c5c",
+                        "surface": "#0e0e0e",
+                        "secondary": "#e2e2e2",
+                        "surface-container-highest": "#262626",
+                        "on-tertiary": "#605f5f",
+                        "on-secondary-container": "#d0d0d0"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
             },
-          },
-        },
-      };
-    </script>
-
-    <!-- Meta & assets -->
-    <link rel="icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
-
+        }</script>
     <style>
-      html {
-        transition: background-color 0.3s, color 0.3s;
-      }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(38, 38, 38, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+        }
     </style>
-  </head>
-  <body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased">
-    <!-- THEME TOGGLE -->
-    <button id="themeToggle" class="fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-lg bg-primary text-white hover:scale-105 transition" aria-label="Toggle dark mode">
-      <i class="fas fa-moon"></i>
-    </button>
+</head>
 
-    <script>
-      /* ------------------------------------------------------------------
-       * safeStorage -- guarded single definition
-       * ------------------------------------------------------------------*/
-      (function () {
-        if (!window.safeStorage) {
-          window.safeStorage = {
-            get(key) {
-              try {
-                return localStorage.getItem(key);
-              } catch {
-                return null;
-              }
-            },
-            set(key, value) {
-              try {
-                localStorage.setItem(key, value);
-              } catch {}
-            },
-          };
-        }
-      })();
-
-      /* ------------------------------------------------------------------
-       * Theme persistence & toggle
-       * ------------------------------------------------------------------*/
-      (function () {
-        const root = document.documentElement;
-        const btn  = document.getElementById('themeToggle');
-        const store = window.safeStorage;
-
-        function setTheme(dark) {
-          root.classList.toggle('dark', dark);
-          store.set('theme', dark ? 'dark' : 'light');
-          btn.innerHTML = `<i class="fas fa-${dark ? 'sun' : 'moon'}"></i>`;
-        }
-
-        // initialise
-        setTheme(
-          store.get('theme') === 'dark' ||
-            (!store.get('theme') && matchMedia('(prefers-color-scheme: dark)').matches)
-        );
-        btn.addEventListener('click', () => setTheme(!root.classList.contains('dark')));
-      })();
-    </script>
-
-    <!-- HEADER -->
-    <header class="py-6 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 sticky top-0 z-30">
-      <div class="container mx-auto flex items-center justify-between px-6">
-        <a href="#home" class="text-xl font-bold text-primary">AK</a>
-        <nav class="hidden md:flex space-x-6">
-          <a href="#career" class="hover:text-primary">Career</a>
-          <a href="#politics" class="hover:text-primary">Politics</a>
-          <a href="#simracing" class="hover:text-primary">Sim&nbsp;Racing</a>
-          <a href="#referee" class="hover:text-primary">Referee</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- HERO -->
-    <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-12 px-6 pt-24">
-      <img src="/assets/andre.png" alt="Portrait of André Karrlein" class="w-72 h-72 rounded-3xl shadow-2xl object-cover" />
-      <div class="max-w-xl text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Hi, I'm <span class="text-primary">André Karrlein</span></h1>
-        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-          Solution Architect • Referee • Sim Racer • Political Enthusiast<br />
-          Passionate about creating engaging digital experiences, fair play on &amp; off the pitch, and electrifying motorsport.
-        </p>
-        <a href="#career" class="inline-block bg-primary text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition">Explore&nbsp;More</a>
-      </div>
-    </section>
-
-    <!-- CAREER -->
-    <section id="career" class="py-20 bg-gray-50 dark:bg-gray-900">
-      <div class="container mx-auto px-6 max-w-5xl">
-        <h2 class="text-3xl font-bold mb-12 text-center">Professional Journey</h2>
-        <div class="space-y-12">
-          <div class="relative pl-10">
-            <span class="absolute left-0 top-1 text-primary"><i class="fas fa-diagram-project"></i></span>
-            <h3 class="text-xl font-semibold">Solution Architect @ Red Bull</h3>
-            <p class="text-gray-600 dark:text-gray-400">Red Bull, Salzburg</p>
-            <p class="text-sm mt-2">Apr 2020 – Present</p>
-          </div>
-          <div class="relative pl-10">
-            <span class="absolute left-0 top-1 text-primary"><i class="fas fa-laptop-code"></i></span>
-            <h3 class="text-xl font-semibold">Senior Software Engineer @ FLYERALARM</h3>
-            <p class="text-gray-600 dark:text-gray-400">FLYERALARM, Würzburg</p>
-            <p class="text-sm mt-2">Jun 2018 – Apr 2020</p>
-          </div>
-          <div class="relative pl-10">
-            <span class="absolute left-0 top-1 text-primary"><i class="fas fa-user-tie"></i></span>
-            <h3 class="text-xl font-semibold">Lead Developer @ FLYERALARM</h3>
-            <p class="text-gray-600 dark:text-gray-400">FLYERALARM, Würzburg</p>
-            <p class="text-sm mt-2">Oct 2018 – Jun 2018</p>
-          </div>
-          <div class="relative pl-10">
-            <span class="absolute left-0 top-1 text-primary"><i class="fas fa-code"></i></span>
-            <h3 class="text-xl font-semibold">Software Engineer @ FLYERALARM</h3>
-            <p class="text-gray-600 dark:text-gray-400">FLYERALARM, Würzburg</p>
-            <p class="text-sm mt-2">Aug 2016 – Oct 2017</p>
-          </div>
+<body class="selection:bg-primary selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,209,255,0.05)]">
+        <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+            <div class="text-xl font-bold tracking-tighter text-white uppercase font-['Space_Grotesk']">
+                André Karrlein
+            </div>
+            <a href="https://x.com/rbak44"
+                class="bg-primary text-on-primary-fixed px-6 py-2 text-sm font-bold uppercase tracking-widest active:scale-95 transition-transform">
+                Connect
+            </a>
         </div>
-      </div>
-    </section>
-
-    <!-- POLITICS -->
-    <section id="politics" class="py-20">
-      <div class="container mx-auto px-6 max-w-5xl text-center">
-        <h2 class="text-3xl font-bold mb-6">Politics &amp; Advocacy</h2>
-        <p class="max-w-3xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-          I believe in transparent, people‑centric policy. On <a href="https://politik.karrlein.com" target="_blank" class="text-primary underline">politik.karrlein.com</a> I share insights on digital transformation, sustainable mobility, and empowering local communities.
-        </p>
-        <a href="https://politik.karrlein.com" target="_blank" class="mt-8 inline-block bg-primary text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition">Read&nbsp;More</a>
-      </div>
-    </section>
-
-    <!-- SIM RACING -->
-    <section id="simracing" class="py-20 bg-gray-50 dark:bg-gray-900">
-      <div class="container mx-auto px-6 max-w-5xl">
-        <h2 class="text-3xl font-bold mb-6 text-center">Sim&nbsp;Racing</h2>
-        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-center md:text-left">
-          Competing in endurance events on <em>Le&nbsp;Mans&nbsp;Ultimate</em>, I focus on race strategy, analytics, and consistency. Deep dives, telemetry, and results are on
-          <a href="https://motorsport.karrlein.com" target="_blank" class="text-primary underline">motorsport.karrlein.com</a>.
-        </p>
-      </div>
-    </section>
-
-    <!-- REFEREE -->
-    <section id="referee" class="py-20 bg-white dark:bg-gray-800">
-      <div class="container mx-auto px-6 max-w-5xl">
-        <h2 class="text-3xl font-bold mb-6 text-center">Referee</h2>
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-          <img src="/assets/referee.png" alt="Refereeing a soccer match" class="w-55 h-72 rounded-3xl shadow-2xl object-cover" />
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            As a BFV referee in the Ruperti group, I champion integrity and respect on the pitch. <a href="https://schiedsrichter.bayern" target="_blank" class="text-primary underline">schiedsrichter.bayern</a>
-          </p>
+        <div class="bg-gradient-to-r from-transparent via-gray-800/50 to-transparent h-[1px] w-full absolute bottom-0">
         </div>
-      </div>
-    </section><!-- FOOTER -->
-    <footer id="contact" class="py-12 bg-gray-100 dark:bg-gray-800">
-      <div class="container mx-auto px-6 text-center">
-        <h3 class="text-xl font-semibold mb-4">Connect&nbsp;with&nbsp;me</h3>
-        <div class="flex justify-center space-x-6 text-2xl mb-6">
-          <a href="https://www.linkedin.com/in/andrekarrlein" target="_blank" class="hover:text-primary" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/andre.karrlein" target="_blank" class="hover:text-primary" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.threads.net/@andre.karrlein" target="_blank" class="hover:text-primary" aria-label="Threads"><i class="fab fa-threads"></i></a>
+    </nav>
+    <main class="relative">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center px-8 md:px-24 pt-32 pb-20 hero-gradient">
+            <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 z-10">
+                    <div class="inline-flex items-center gap-2 mb-6 text-primary">
+                        <span class="w-12 h-[1px] bg-primary"></span>
+                        <span class="font-['Space_Grotesk'] text-xs tracking-[0.4em] uppercase">Mission Status:
+                            Active</span>
+                    </div>
+                    <h1
+                        class="text-6xl md:text-8xl font-['Space_Grotesk'] font-bold tracking-tighter leading-none mb-6">
+                        André Karrlein
+                    </h1>
+                    <p
+                        class="text-on-surface-variant font-['Space_Grotesk'] text-lg md:text-xl tracking-wide max-w-xl mb-10 leading-relaxed uppercase">
+                        Solution Architect <span class="text-primary mx-2">•</span> Referee <span
+                            class="text-primary mx-2">•</span> Sim Racer <span class="text-primary mx-2">•</span>
+                        Political Enthusiast
+                    </p>
+                    <div class="flex items-center gap-6">
+                        <a href="#journey"
+                            class="bg-primary text-on-primary-fixed px-10 py-4 font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all">
+                            Explore My Journey
+                        </a>
+                        <!--<a class="flex items-center gap-3 text-on-surface font-['Space_Grotesk'] text-sm tracking-widest uppercase hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Dossier
+                        </a>-->
+                    </div>
+                </div>
+                <div class="md:col-span-5 relative">
+                    <div class="relative aspect-[3/4] w-full max-w-md ml-auto overflow-hidden">
+                        <img alt="André Karrlein"
+                            class="w-full h-full object-cover brightness-90 hover:grayscale-0 transition-all duration-700"
+                            data-alt="Professional portrait of André Karrlein in high contrast lighting"
+                            src="/main/images/rbmh_Karrlein_Andre_neu_portrait.png" />
+                        <div class="absolute inset-0 border-[20px] border-black/20"></div>
+                        <div class="absolute -bottom-4 -left-4 w-24 h-24 border-l-2 border-b-2 border-primary"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Professional Journey (Bento Grid) -->
+        <section class="py-32 px-8 md:px-24 bg-surface-container-low" id="journey">
+            <div class="max-w-screen-2xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div>
+                        <h2
+                            class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold tracking-tighter mb-4 uppercase">
+                            Professional Journey</h2>
+                        <p class="text-on-surface-variant max-w-md">Architecting digital ecosystems for world-class
+                            high-performance brands.</p>
+                    </div>
+                    <div class="text-primary font-['Space_Grotesk'] text-6xl font-bold opacity-10">01</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div
+                        class="md:col-span-2 glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors">
+                        <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-4xl text-primary">rocket_launch</span>
+                        </div>
+                        <div class="text-primary mb-6 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-xs font-bold tracking-widest uppercase">Current Mission</span>
+                        </div>
+                        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-2">Red Bull</h3>
+                        <p class="text-on-surface-variant mb-8 uppercase text-xs tracking-widest">Solution Architect •
+                            Media House • Since 2020</p>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">Building the technological backbone for
+                            global content distribution and management at the world's most innovative media powerhouse.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Architecture</span>
+                            <span
+                                class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">DDD</span>
+                            <span
+                                class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Scale</span>
+                            <span
+                                class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Cloud</span>
+                        </div>
+                    </div>
+                    <div
+                        class="md:col-span-2 glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors">
+                        <div class="text-on-surface-variant mb-6 text-xs font-bold tracking-widest uppercase">Previous
+                            Chapter</div>
+                        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-2">FLYERALARM</h3>
+                        <p class="text-on-surface-variant mb-8 uppercase text-xs tracking-widest">Senior Technical Lead
+                            • 2016 - 2020</p>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">Engineered complex e-commerce flows and
+                            automated manufacturing pipelines for Europe's leading online print platform.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-on-surface-variant border border-outline-variant/30">E-Commerce</span>
+                            <span
+                                class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-on-surface-variant border border-outline-variant/30">Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Passions (Asymmetric Layout) -->
+        <section class="py-32 px-8 md:px-24 bg-surface-container-lowest">
+            <div class="max-w-screen-2xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-20">
+                    <!-- Sim Racing -->
+                    <div class="md:col-span-5 flex flex-col gap-8 order-2 md:order-1">
+                        <div class="relative overflow-hidden group">
+                            <img alt="Referee André Karrlein"
+                                class="h-full aspect-video object-cover transition-transform duration-700 group-hover:scale-110"
+                                data-alt="Me as a Referee"
+                                src="/main/images/referee_w.png" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <span
+                                    class="bg-primary text-on-primary-fixed text-[10px] px-2 py-1 font-bold uppercase tracking-tighter">Authority</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-4 uppercase">The Referee</h3>
+                            <p class="text-on-surface-variant leading-relaxed">Decision-making under pressure. Managing
+                                high-stakes situations on the pitch requires authority, empathy, and split-second
+                                clarity.</p>
+                            <div
+                                class="flex items-center gap-4 text-[10px] font-bold text-primary uppercase tracking-widest">
+                                <span>Authority</span>
+                                <span>•</span>
+                                <span>Integrity</span>
+                                <span>•</span>
+                                <span>Focus</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7 flex flex-col justify-center order-1 md:order-2">
+                        <div class="mb-12">
+                            <div class="text-primary font-['Space_Grotesk'] text-6xl font-bold opacity-10 mb-4">02</div>
+                            <h2
+                                class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold tracking-tighter uppercase">
+                                High Performance Ops</h2>
+                        </div>
+                        <div class="space-y-12">
+                            <!-- Refereeing -->
+                            <div class="flex gap-8 group">
+                                <div
+                                    class="flex-shrink-0 w-[2px] bg-primary/20 group-hover:bg-primary transition-colors">
+                                </div>
+                                <div>
+                                    <h4 class="font-['Space_Grotesk'] text-xl font-bold mb-2 uppercase tracking-tight">
+                                        Sim Racing</h4>
+                                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Pushing the limits
+                                        of precision and endurance in Le Mans Ultimate. Specializing in GT3 and Hypercar
+                                        classes, competing in endurance events where technical setup meets psychological
+                                        grit.</p>
+                                    <div
+                                        class="flex items-center gap-4 text-[10px] font-bold text-primary uppercase tracking-widest">
+                                        <span>Precession</span>
+                                        <span>•</span>
+                                        <span>Strategy</span>
+                                        <span>•</span>
+                                        <span>Focus</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Politics -->
+                            <div class="flex gap-8 group">
+                                <div
+                                    class="flex-shrink-0 w-[2px] bg-primary/20 group-hover:bg-primary transition-colors">
+                                </div>
+                                <div>
+                                    <h4 class="font-['Space_Grotesk'] text-xl font-bold mb-2 uppercase tracking-tight">
+                                        Political Enthusiast</h4>
+                                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Advocating for a
+                                        future built on efficiency, logic, and forward-thinking policy. Engaged in the
+                                        intersection of technology and governance.</p>
+                                    <div
+                                        class="flex items-center gap-4 text-[10px] font-bold text-primary uppercase tracking-widest">
+                                        <span>Advocacy</span>
+                                        <span>•</span>
+                                        <span>Governance</span>
+                                        <span>•</span>
+                                        <span>Futurism</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA -->
+        <section
+            class="py-40 px-8 flex flex-col items-center justify-center text-center bg-surface relative overflow-hidden">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]">
+            </div>
+            <div class="relative z-10">
+                <h2 class="font-['Space_Grotesk'] text-5xl md:text-7xl font-bold tracking-tighter mb-8 uppercase">Let's
+                    Build the Future</h2>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="https://x.com/rbak44"
+                        class="bg-primary text-on-primary-fixed px-12 py-5 font-bold uppercase tracking-widest text-sm active:scale-95 transition-transform">
+                        Initiate Connection
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-12 border-t border-gray-900 bg-black">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 gap-6 max-w-screen-2xl mx-auto">
+            <div class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-500">
+                © 2026 André Karrlein. <span class="text-primary/60 text-purple-500/60">Orbital Command.</span>
+            </div>
+            <div class="flex items-center gap-8">
+                <a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-600 transition-colors hover:text-purple-500"
+                    href="https://x.com/rbak44">X</a>
+                <a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-600 transition-colors hover:text-purple-500"
+                    href="https://www.linkedin.com/in/andre-karrlein/">LinkedIn</a>
+                <a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-600 transition-colors hover:text-purple-500"
+                    href="https://github.com/andre-karrlein">GitHub</a>
+                <a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-600 transition-colors hover:text-purple-500"
+                    href="impressum.html">Impressum</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                <span class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-500">System
+                    Nominal</span>
+            </div>
         </div>
-        <p class="text-sm text-gray-500 dark:text-gray-400">© 2025 André Karrlein. All rights reserved.</p>
-        <p class="text-sm mt-2"><a href="impressum.html" class="hover:text-primary">Impressum</a></p>
-      </div>
     </footer>
-  </body>
+</body>
+
 </html>
