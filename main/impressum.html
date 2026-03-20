@@ -1,73 +1,182 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Impressum – André Karrlein</title>
-    <!-- Tailwind via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: '#6b21a8',
-              accent: '#ff375f',
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>André Karrlein </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#3e4040",
+                        "surface-bright": "#2c2c2c",
+                        "error-container": "#9f0519",
+                        "primary-fixed": "#A855F7",
+                        "secondary-fixed-dim": "#d4d4d4",
+                        "on-surface": "#ffffff",
+                        "background": "#000000",
+                        "outline": "#757575",
+                        "surface-container": "#191919",
+                        "primary": "#A855F7",
+                        "primary-container": "#A855F7",
+                        "on-primary-fixed": "#ffffff",
+                        "on-tertiary-fixed": "#515050",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#f9f9f9",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#000000",
+                        "on-secondary": "#505252",
+                        "on-primary-container": "#ffffff",
+                        "on-error": "#490006",
+                        "outline-variant": "#484848",
+                        "surface-variant": "#262626",
+                        "secondary-container": "#454747",
+                        "tertiary-dim": "#edeaea",
+                        "surface-container-low": "#131313",
+                        "on-tertiary-container": "#575656",
+                        "primary-dim": "#9333EA",
+                        "on-error-container": "#ffa8a3",
+                        "secondary-dim": "#d4d4d4",
+                        "on-surface-variant": "#ababab",
+                        "surface-container-high": "#1f1f1f",
+                        "tertiary": "#fcf9f8",
+                        "tertiary-container": "#edeaea",
+                        "inverse-primary": "#7e22ce",
+                        "on-background": "#ffffff",
+                        "surface-tint": "#A855F7",
+                        "inverse-on-surface": "#555555",
+                        "tertiary-fixed-dim": "#f3f0ef",
+                        "primary-fixed-dim": "#9333EA",
+                        "surface-dim": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#6e6d6d",
+                        "error": "#ff716c",
+                        "tertiary-fixed": "#ffffff",
+                        "error-dim": "#d7383b",
+                        "on-primary-fixed-variant": "#7e22ce",
+                        "on-secondary-fixed-variant": "#5a5c5c",
+                        "surface": "#0e0e0e",
+                        "secondary": "#e2e2e2",
+                        "surface-container-highest": "#262626",
+                        "on-tertiary": "#605f5f",
+                        "on-secondary-container": "#d0d0d0"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
             },
-          },
-        },
-      };
-    </script>
-    <link rel="icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
-  </head>
-  <body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased">
-    <!-- Header -->
-    <header class="py-6 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 sticky top-0 z-30">
-      <div class="container mx-auto flex items-center justify-between px-6">
-        <a href="https://www.karrlein.com" class="text-xl font-bold text-primary">AK</a>
-        <nav class="hidden md:flex space-x-6">
-          <a href="https://www.karrlein.com#career" class="hover:text-primary">Career</a>
-          <a href="https://www.karrlein.com#politics" class="hover:text-primary">Politik</a>
-          <a href="https://www.karrlein.com#simracing" class="hover:text-primary">Sim Racing</a>
-          <a href="https://www.karrlein.com#referee" class="hover:text-primary">Referee</a>
-          <a href="impressum.html" class="text-primary font-semibold">Impressum</a>
-        </nav>
-      </div>
-    </header>
+        }</script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
 
-    <!-- Impressum Content -->
-    <main class="container mx-auto px-6 py-20 max-w-3xl space-y-12">
-      <h1 class="text-4xl font-bold text-center text-primary">Impressum</h1>
-      <section class="space-y-6">
-        <h2 class="text-2xl font-semibold">Angaben gemäß § 5 TMG</h2>
-        <p>
-          André Karrlein<br />
-          Münchener Str. 25 F<br />
-          83395 Freilassing
-        </p>
-      </section>
-      <section class="space-y-6">
-        <h2 class="text-2xl font-semibold">Kontakt</h2>
-        <p>
-          E-Mail: <a href="mailto:andre@karrlein.com" class="text-primary underline">andre@karrlein.com</a><br />
-        </p>
-      </section>
-      <section class="space-y-6">
-        <h2 class="text-2xl font-semibold">Verantwortlich für den Inhalt</h2>
-        <p>
-          André Karrlein<br />
-          Anschrift wie oben
-        </p>
-      </section>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(38, 38, 38, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+        }
+    </style>
+</head>
+
+<body class="selection:bg-primary selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,209,255,0.05)]">
+        <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+            <div class="text-xl font-bold tracking-tighter text-white uppercase font-['Space_Grotesk']">
+                <a href="index.html">André Karrlein</a>
+            </div>
+            <a href="https://x.com/rbak44"
+                class="bg-primary text-on-primary-fixed px-6 py-2 text-sm font-bold uppercase tracking-widest active:scale-95 transition-transform">
+                Connect
+            </a>
+        </div>
+        <div class="bg-gradient-to-r from-transparent via-gray-800/50 to-transparent h-[1px] w-full absolute bottom-0">
+        </div>
+    </nav>
+    <main class="relative">
+        <!-- Impressum -->
+        <section class="py-32 px-8 md:px-24 bg-surface-container-low" id="journey">
+            <div class="max-w-screen-2xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div>
+                        <h2
+                            class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold tracking-tighter mb-4 uppercase">
+                            Impressum</h2>
+                        <h2 class="text-2xl font-semibold">Angaben gemäß § 5 TMG</h2>
+                        <p>
+                            André Karrlein<br />
+                            Münchener Str. 25 F<br />
+                            83395 Freilassing
+                          </p>
+                          </br>
+                          <h2 class="text-2xl font-semibold">Kontakt</h2>
+                          <p>
+                            E-Mail: <a href="mailto:andre@karrlein.com" class="text-primary underline">andre@karrlein.com</a><br />
+                          </p>
+                          </br>
+                          <h2 class="text-2xl font-semibold">Verantwortlich für den Inhalt</h2>
+                          <p>
+                            André Karrlein<br />
+                            Anschrift wie oben
+                          </p>
+                    </div>
+                    <div class="text-primary font-['Space_Grotesk'] text-6xl font-bold opacity-10">01</div>
+                </div>
+            </div>
+        </section>
     </main>
-
     <!-- Footer -->
-    <footer class="py-12 bg-gray-100 dark:bg-gray-800 text-center">
-      <div class="container mx-auto px-6">
-        <p class="text-sm text-gray-500 dark:text-gray-400">© 2025 André Karrlein. All rights reserved.</p>
-      </div>
+    <footer class="w-full py-12 border-t border-gray-900 bg-black">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 gap-6 max-w-screen-2xl mx-auto">
+            <div class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-500">
+                © 2026 André Karrlein. <span class="text-primary/60 text-purple-500/60">Orbital Command.</span>
+            </div>
+            <div class="flex items-center gap-8">
+                <a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-600 transition-colors hover:text-purple-500"
+                    href="https://x.com/rbak44">X</a>
+                <a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-600 transition-colors hover:text-purple-500"
+                    href="https://www.linkedin.com/in/andre-karrlein/">LinkedIn</a>
+                <a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-600 transition-colors hover:text-purple-500"
+                    href="https://github.com/andre-karrlein">GitHub</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                <span class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] uppercase text-gray-500">System
+                    Nominal</span>
+            </div>
+        </div>
     </footer>
-  </body>
+</body>
+
 </html>
