@@ -10,14 +10,14 @@ This repository contains the complete source for the modern portfolio website. I
 
 - Professional dark glassmorphism design
 - Full SEO, accessibility, and performance optimizations
-- Modern GitHub Actions deployment
+- Modern GitHub Actions deployment with CloudFront invalidation
 - Simple root-level structure for easy editing and deployment
 
 ## Repository Structure
 
 ```
 .
-├── .github/workflows/deploy.yml   # Modern S3 deployment to karrlein.com
+├── .github/workflows/deploy.yml   # Modern S3 + CloudFront deployment
 ├── index.html                     # Main portfolio (single-page)
 ├── impressum.html                 # Legal / Imprint
 ├── images/                        # Portrait + referee photos
@@ -35,7 +35,13 @@ This repository contains the complete source for the modern portfolio website. I
 
 Automatic via GitHub Actions on push to `master`:
 - Syncs root contents → `s3://karrlein.com`
+- Invalidates CloudFront cache automatically
 - Uses latest AWS actions (v4) with best practices and concurrency control
+
+**Required GitHub Secrets** (set in repo Settings → Secrets and variables → Actions):
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `CLOUDFRONT_DISTRIBUTION_ID` (your CloudFront distribution ID)
 
 ## Design System
 - **Primary accent**: `#A855F7` (purple)
