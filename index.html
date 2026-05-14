@@ -35,21 +35,9 @@
     </style>
 </head>
 <body class="selection:bg-primary selection:text-on-primary-fixed">
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,209,255,0.05)]" aria-label="Main navigation">
-        <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
-            <div class="text-xl font-bold tracking-tighter text-white uppercase font-['Space_Grotesk']">
-                André Karrlein
-            </div>
-            <a href="https://x.com/rbak44" class="bg-primary text-on-primary-fixed px-6 py-2 text-sm font-bold uppercase tracking-widest active:scale-95 transition-transform" aria-label="Connect on X">
-                Connect
-            </a>
-        </div>
-        <div class="bg-gradient-to-r from-transparent via-gray-800/50 to-transparent h-[1px] w-full absolute bottom-0"></div>
-    </nav>
     <main class="relative">
         <!-- Hero Section -->
-        <section class="min-h-screen flex flex-col justify-center px-8 md:px-24 pt-32 pb-20 hero-gradient">
+        <section class="min-h-screen flex flex-col justify-center px-8 md:px-24 pt-20 pb-20 hero-gradient">
             <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-7 z-10">
                     <div class="inline-flex items-center gap-2 mb-6 text-primary">
@@ -92,13 +80,14 @@
                             <span class="text-xs font-bold tracking-widest uppercase">Current Mission</span>
                         </div>
                         <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-2">Red Bull</h3>
-                        <p class="text-on-surface-variant mb-8 uppercase text-xs tracking-widest">Solution Architect • Media House • Since 2020</p>
+                        <p class="text-on-surface-variant mb-8 uppercase text-xs tracking-widest">Solution Architect • Teamlead • Media House • Since 2020</p>
                         <p class="text-on-surface-variant leading-relaxed mb-6">Building the technological backbone for global content distribution and management at the world's most innovative media powerhouse.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Architecture</span>
                             <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">DDD</span>
                             <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Scale</span>
                             <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Cloud</span>
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Teamlead</span>
                         </div>
                     </div>
                     <div class="md:col-span-2 glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors">
@@ -115,67 +104,52 @@
             </div>
         </section>
 
-        <!-- Passions (Asymmetric Layout) -->
+        <!-- High Performance Ops (Card Grid) -->
         <section class="py-32 px-8 md:px-24 bg-surface-container-lowest">
             <div class="max-w-screen-2xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-20">
-                    <!-- Referee Image -->
-                    <div class="md:col-span-5 flex flex-col gap-8 order-2 md:order-1">
-                        <div class="relative overflow-hidden group">
-                            <img alt="Referee André Karrlein" class="h-full aspect-video object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Me as a Referee" src="images/referee_w.png" width="1280" height="720" loading="lazy" decoding="async" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-                            <div class="absolute bottom-6 left-6">
-                                <span class="bg-primary text-on-primary-fixed text-[10px] px-2 py-1 font-bold uppercase tracking-tighter">Authority</span>
-                            </div>
+                <div class="mb-16 text-center md:text-left">
+                    <div class="text-primary font-['Space_Grotesk'] text-6xl font-bold opacity-10 mb-4">02</div>
+                    <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold tracking-tighter uppercase">High Performance Ops</h2>
+                    <p class="text-on-surface-variant max-w-md mt-4">Three pillars of high-performance mindset: Authority, Precision & Advocacy.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Referee Card -->
+                    <div class="glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors h-full flex flex-col">
+                        <div class="text-primary mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-4xl">gavel</span>
                         </div>
-                        <div>
-                            <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-4 uppercase">The Referee</h3>
-                            <p class="text-on-surface-variant leading-relaxed">Decision-making under pressure. Managing high-stakes situations on the pitch requires authority, empathy, and split-second clarity.</p>
-                            <div class="flex items-center gap-4 text-[10px] font-bold text-primary uppercase tracking-widest">
-                                <span>Authority</span>
-                                <span>•</span>
-                                <span>Integrity</span>
-                                <span>•</span>
-                                <span>Focus</span>
-                            </div>
+                        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-4">The Referee</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-6 flex-grow">Decision-making under pressure. Managing high-stakes situations on the pitch requires authority, empathy, and split-second clarity.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Authority</span>
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Integrity</span>
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Focus</span>
                         </div>
                     </div>
-                    <div class="md:col-span-7 flex flex-col justify-center order-1 md:order-2">
-                        <div class="mb-12">
-                            <div class="text-primary font-['Space_Grotesk'] text-6xl font-bold opacity-10 mb-4">02</div>
-                            <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold tracking-tighter uppercase">High Performance Ops</h2>
+                    <!-- Sim Racing Card -->
+                    <div class="glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors h-full flex flex-col">
+                        <div class="text-primary mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-4xl">sports_motorsports</span>
                         </div>
-                        <div class="space-y-12">
-                            <!-- Sim Racing -->
-                            <div class="flex gap-8 group">
-                                <div class="flex-shrink-0 w-[2px] bg-primary/20 group-hover:bg-primary transition-colors"></div>
-                                <div>
-                                    <h4 class="font-['Space_Grotesk'] text-xl font-bold mb-2 uppercase tracking-tight">Sim Racing</h4>
-                                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Pushing the limits of precision and endurance in Le Mans Ultimate. Specializing in GT3 and Hypercar classes, competing in endurance events where technical setup meets psychological grit.</p>
-                                    <div class="flex items-center gap-4 text-[10px] font-bold text-primary uppercase tracking-widest">
-                                        <span>Precision</span>
-                                        <span>•</span>
-                                        <span>Strategy</span>
-                                        <span>•</span>
-                                        <span>Focus</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Political Enthusiast -->
-                            <div class="flex gap-8 group">
-                                <div class="flex-shrink-0 w-[2px] bg-primary/20 group-hover:bg-primary transition-colors"></div>
-                                <div>
-                                    <h4 class="font-['Space_Grotesk'] text-xl font-bold mb-2 uppercase tracking-tight">Political Enthusiast</h4>
-                                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Advocating for a future built on efficiency, logic, and forward-thinking policy. Engaged in the intersection of technology and governance.</p>
-                                    <div class="flex items-center gap-4 text-[10px] font-bold text-primary uppercase tracking-widest">
-                                        <span>Advocacy</span>
-                                        <span>•</span>
-                                        <span>Governance</span>
-                                        <span>•</span>
-                                        <span>Futurism</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-4">Sim Racing</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-6 flex-grow">Pushing the limits of precision and endurance in Le Mans Ultimate. Specializing in GT3 and Hypercar classes, competing in endurance events where technical setup meets psychological grit.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Precision</span>
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Strategy</span>
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Focus</span>
+                        </div>
+                    </div>
+                    <!-- Political Enthusiast Card -->
+                    <div class="glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors h-full flex flex-col">
+                        <div class="text-primary mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-4xl">account_balance</span>
+                        </div>
+                        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-4">Political Enthusiast</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-6 flex-grow">Advocating for a future built on efficiency, logic, and forward-thinking policy. Engaged in the intersection of technology and governance.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Advocacy</span>
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Governance</span>
+                            <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Futurism</span>
                         </div>
                     </div>
                 </div>
