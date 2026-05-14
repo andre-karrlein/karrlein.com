@@ -1,42 +1,43 @@
-# André Karrlein — Portfolio (v2 Modernized)
+# André Karrlein — Portfolio
 
 > **Clean • Modern • Focused**
 
 Single-site repository for the professional portfolio at [karrlein.com](https://www.karrlein.com).
 
-## What's New in v2 (May 2026)
+## Overview
 
-- **Fully cleaned up**: Removed `motorsport/` and `politik/` sub-sites (future dedicated repos if needed)
-- **Restructured to root**: Simpler deployment (`index.html` + `impressum.html` + `images/` directly at root)
-- **Modernized DevOps**: Updated GitHub Actions to v4 with best practices
-- **Enhanced**: Full SEO meta tags, Open Graph, Twitter Cards, JSON-LD structured data, accessibility improvements, performance optimizations (lazy loading, font preconnect, image dimensions)
-- **Preserved 100%**: Exact same beautiful dark glassmorphism design, typography (Space Grotesk + Inter), colors (#A855F7), layout, content, and interactions
+This repository contains the complete source for the modern portfolio website. It has been cleaned up to a single, maintainable site with:
+
+- Professional dark glassmorphism design
+- Full SEO, accessibility, and performance optimizations
+- Modern GitHub Actions deployment
+- Simple root-level structure for easy editing and deployment
 
 ## Repository Structure
 
 ```
 .
-├── .github/workflows/deploy.yml   # Modern S3 deployment
-├── index.html                     # Main portfolio (single-page, enhanced)
+├── .github/workflows/deploy.yml   # Modern S3 deployment to karrlein.com
+├── index.html                     # Main portfolio (single-page)
 ├── impressum.html                 # Legal / Imprint
 ├── images/                        # Portrait + referee photos
 ├── README.md                      # This file
-└── (no other folders or legacy code)
+└── (clean single-site structure)
 ```
 
 ## Quick Start (Local Preview)
 
-1. Clone the `v2-modern-portfolio` branch
+1. Clone the repository
 2. Open `index.html` in any modern browser
-3. No build step, no dependencies — Tailwind loads from CDN
+3. No build step required — Tailwind CSS loads from CDN
 
 ## Deployment
 
-Automatic via GitHub Actions on push to `v2-modern-portfolio` (or master after merge):
+Automatic via GitHub Actions on push to `master`:
 - Syncs root contents → `s3://karrlein.com`
-- Uses latest AWS actions + recommended security practices
+- Uses latest AWS actions (v4) with best practices and concurrency control
 
-## Design System (Preserved)
+## Design System
 - **Primary accent**: `#A855F7` (purple)
 - **Typography**: Space Grotesk (headings), Inter (body)
 - **Visual style**: Dark theme, glassmorphism cards, elegant hover states, Material Symbols icons
@@ -51,7 +52,7 @@ Automatic via GitHub Actions on push to `v2-modern-portfolio` (or master after m
 
 ## Editing
 
-Edit `index.html` directly. Keep Tailwind utility classes consistent. Test on mobile + desktop.
+Edit `index.html` directly. Keep Tailwind utility classes consistent. Test responsiveness on mobile + desktop.
 
 ## Contact
 
@@ -60,5 +61,4 @@ LinkedIn: [andre-karrlein](https://www.linkedin.com/in/andre-karrlein/)
 
 ---
 
-**Orbital Command — 2026**  
-*This v2 branch is the clean, modern foundation for karrlein.com.*
+**Orbital Command — 2026**
