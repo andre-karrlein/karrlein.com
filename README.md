@@ -21,6 +21,7 @@ This repository contains the complete source for the modern portfolio website.
 .
 ├── tailwind.config.js             # Production Tailwind config
 ├── input.css                      # Tailwind entry point
+├── package.json                   # Build scripts (optional but recommended)
 ├── index.html                     # Main portfolio
 ├── css/
 │   └── styles.css                 # Custom styles + animations
@@ -42,26 +43,39 @@ This repository contains the complete source for the modern portfolio website.
 **For the full Tailwind-powered experience** (with all utilities), open the self-contained preview:
 `/artifacts/karrlein-v3-preview.html`
 
-## Production Tailwind Build (Recommended for 100% utility support)
+## Production Tailwind Build (Fix for "could not determine executable to run")
 
-To get a perfect, minified `css/tailwind.css` with all Tailwind utilities + custom styles:
+If you get the error `npx tailwindcss ... could not determine executable to run`, use this **correct command for Tailwind v4**:
 
 ```bash
-# 1. Install Tailwind (once)
-npm install -D tailwindcss
+# 1. Install (first time only)
+npm install -D tailwindcss @tailwindcss/cli
 
-# 2. Build production CSS
-npx tailwindcss -i ./input.css -o ./css/tailwind.css --minify
+# 2. Build production CSS (correct command)
+npx @tailwindcss/cli -i ./input.css -o ./css/tailwind.css --minify
 
-# 3. Update index.html to link the built file (add this line in <head>)
+# 3. (Optional) Add this line in index.html <head> for full utilities
 <link rel="stylesheet" href="css/tailwind.css">
 ```
 
-Then commit `css/tailwind.css` and push. This gives you:
+**Even easier** — add this to `package.json`:
+
+```json
+"scripts": {
+  "build:css": "@tailwindcss/cli -i input.css -o css/tailwind.css --minify"
+}
+```
+
+Then just run:
+```bash
+npm run build:css
+```
+
+This gives you:
 - Zero console warnings
 - Full Tailwind utility classes
-- Smaller payload than CDN
-- One-time build (no dev server needed)
+- Smaller, optimized payload
+- One-time setup
 
 ## Main Branch vs Feature Branch
 
