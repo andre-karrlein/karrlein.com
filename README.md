@@ -1,68 +1,56 @@
-# André Karrlein — Portfolio
+# André Karrlein — Portfolio (v3)
 
-> **Clean • Modern • Focused**
+> **Clean • Modern • Animated • Focused**
 
 Single-site repository for the professional portfolio at [karrlein.com](https://www.karrlein.com).
 
 ## Overview
 
-This repository contains the complete source for the modern portfolio website. It has been cleaned up to a single, maintainable site with:
+This repository contains the complete source for the modern portfolio website.
 
-- Professional dark glassmorphism design
-- Full SEO, accessibility, and performance optimizations
-- Modern GitHub Actions deployment with CloudFront invalidation
-- Simple root-level structure for easy editing and deployment
+**Current Status (Working):** The site is fully functional using only `css/styles.css`. All animations, glassmorphism, and design are working perfectly. The Tailwind build is **optional** for advanced users who want full utility classes.
+
+**v3 Highlights:**
+- Cool animations (scroll reveals, magnetic buttons, 3D tilt, progress bar, back-to-top)
+- Clean split: `index.html` + `css/styles.css` + `js/script.js`
+- No Tailwind CDN warning
+- Fully accessible
+
+## Quick Start
+
+Just open `index.html` in your browser. Everything works out of the box.
+
+## Optional: Full Tailwind Build (Advanced)
+
+If you want 100% Tailwind utilities, run:
+
+```bash
+npm install -D tailwindcss @tailwindcss/cli
+npx @tailwindcss/cli -i ./input.css -o ./css/tailwind.css --minify
+```
+
+Then **manually** add this line in `index.html`:
+```html
+<link rel="stylesheet" href="css/tailwind.css">
+```
+
+**Note:** Only do this if you need extra Tailwind classes. The current `css/styles.css` already covers the full design.
 
 ## Repository Structure
 
 ```
 .
-├── .github/workflows/deploy.yml   # Modern S3 + CloudFront deployment
-├── index.html                     # Main portfolio (single-page)
-├── impressum.html                 # Legal / Imprint
-├── images/                        # Portrait + referee photos
-├── README.md                      # This file
-└── (clean single-site structure)
+├── tailwind.config.js
+├── input.css
+├── index.html
+├── css/styles.css          ← Currently active (working design)
+├── js/script.js
+└── ...
 ```
-
-## Quick Start (Local Preview)
-
-1. Clone the repository
-2. Open `index.html` in any modern browser
-3. No build step required — Tailwind CSS loads from CDN
-
-## Deployment
-
-Automatic via GitHub Actions on push to `master`:
-- Syncs root contents → `s3://karrlein.com`
-- Invalidates CloudFront cache automatically
-- Uses latest AWS actions (v4) with best practices and concurrency control
-
-**Required GitHub Secrets** (set in repo Settings → Secrets and variables → Actions):
-- `AWS_ACCESS_KEY_ID`
-- `AWS_SECRET_ACCESS_KEY`
-- `CLOUDFRONT_DISTRIBUTION_ID` (your CloudFront distribution ID)
-
-## Design System
-- **Primary accent**: `#A855F7` (purple)
-- **Typography**: Space Grotesk (headings), Inter (body)
-- **Visual style**: Dark theme, glassmorphism cards, elegant hover states, Material Symbols icons
-- **Responsive**: Mobile-first with Tailwind
-
-## Content Highlights
-- Solution Architect at Red Bull (Media House, DDD • Scale • Cloud since 2020)
-- Previous: Senior Technical Lead at FLYERALARM (e-commerce & automation)
-- Referee (authority, integrity, focus)
-- Sim Racer in Le Mans Ultimate (GT3 & Hypercar endurance)
-- Political Enthusiast (technology + governance)
-
-## Editing
-
-Edit `index.html` directly. Keep Tailwind utility classes consistent. Test responsiveness on mobile + desktop.
 
 ## Contact
 
-X / Twitter: [@rbak44](https://x.com/rbak44)  
+X: [@rbak44](https://x.com/rbak44)  
 LinkedIn: [andre-karrlein](https://www.linkedin.com/in/andre-karrlein/)
 
 ---
