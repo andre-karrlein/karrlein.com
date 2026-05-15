@@ -197,3 +197,15 @@ body {
 .section-accent.visible::after {
     width: 120px;
 }
+
+/* SLOWER PING for Mission Status dot */
+.slow-ping {
+    animation: slow-ping 2.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes slow-ping {
+    75%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
