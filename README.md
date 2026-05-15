@@ -11,7 +11,7 @@ This repository contains the complete source for the modern portfolio website.
 **v3 Highlights (feat/v3-enhanced-animations branch):**
 - Cool, meaningful animations (scroll reveals, magnetic buttons, 3D hero portrait tilt, progress bar, back-to-top)
 - Fully split structure: `index.html` + `css/styles.css` + `js/script.js`
-- Production-ready: Tailwind CDN removed to eliminate warnings
+- Production-ready: Tailwind CDN removed (no more warnings)
 - All original design, content, and glassmorphism preserved
 - Fully accessible (respects `prefers-reduced-motion`)
 
@@ -19,12 +19,13 @@ This repository contains the complete source for the modern portfolio website.
 
 ```
 .
-├── .github/workflows/             # Deployment workflows
-├── index.html                     # Main portfolio (single-page)
+├── tailwind.config.js             # Production Tailwind config
+├── input.css                      # Tailwind entry point
+├── index.html                     # Main portfolio
 ├── css/
-│   └── styles.css                 # Custom styles + all animations
+│   └── styles.css                 # Custom styles + animations
 ├── js/
-│   └── script.js                  # Interactive animations (magnetic, tilt, scroll reveals, etc.)
+│   └── script.js                  # Interactive animations
 ├── impressum.html                 # Legal / Imprint
 ├── images/                        # Portrait + referee photos
 ├── README.md                      # This file
@@ -34,53 +35,64 @@ This repository contains the complete source for the modern portfolio website.
 ## Quick Start (Local Preview)
 
 1. Clone the repository
-2. Checkout the `feat/v3-enhanced-animations` branch (recommended for latest animations)
+2. Checkout the `feat/v3-enhanced-animations` branch
 3. Open `index.html` in any modern browser
-4. No build step required — everything is static and self-contained
+4. No build step required — fully static
 
-**For the full Tailwind-powered preview** (with all utilities), open the self-contained preview file in `/artifacts/karrlein-v3-preview.html`.
+**For the full Tailwind-powered experience** (with all utilities), open the self-contained preview:
+`/artifacts/karrlein-v3-preview.html`
+
+## Production Tailwind Build (Recommended for 100% utility support)
+
+To get a perfect, minified `css/tailwind.css` with all Tailwind utilities + custom styles:
+
+```bash
+# 1. Install Tailwind (once)
+npm install -D tailwindcss
+
+# 2. Build production CSS
+npx tailwindcss -i ./input.css -o ./css/tailwind.css --minify
+
+# 3. Update index.html to link the built file (add this line in <head>)
+<link rel="stylesheet" href="css/tailwind.css">
+```
+
+Then commit `css/tailwind.css` and push. This gives you:
+- Zero console warnings
+- Full Tailwind utility classes
+- Smaller payload than CDN
+- One-time build (no dev server needed)
 
 ## Main Branch vs Feature Branch
 
 - `master` — Stable production version
-- `feat/v3-enhanced-animations` — Latest version with cool animations and split file structure (recommended for development)
+- `feat/v3-enhanced-animations` — Latest version with animations + split structure (recommended)
 
 ## Deployment
 
-Automatic via GitHub Actions on push to `master`:
-- Syncs root contents → S3
-- Invalidates CloudFront cache
-- Uses latest AWS actions with best practices
+Automatic via GitHub Actions on push to `master` (S3 + CloudFront).
 
-**Required GitHub Secrets** (set in repo Settings → Secrets and variables → Actions):
-- `AWS_ACCESS_KEY_ID`
-- `AWS_SECRET_ACCESS_KEY`
-- `CLOUDFRONT_DISTRIBUTION_ID`
-
-## Design System
+## Design System & Animations
 - **Primary accent**: `#A855F7` (purple)
 - **Typography**: Space Grotesk (headings), Inter (body)
-- **Visual style**: Dark theme, glassmorphism cards, elegant hover states, Material Symbols icons
+- **Visual style**: Dark theme, glassmorphism, elegant hovers
 - **Animations**: Subtle, performant, meaningful (scroll-triggered, magnetic, 3D tilt)
 - **Responsive**: Mobile-first
 
 ## Content Highlights
 - Solution Architect at Red Bull (Media House, DDD • Scale • Cloud since 2020)
-- Previous: Senior Technical Lead at FLYERALARM (e-commerce & automation)
-- Referee (authority, integrity, focus)
-- Sim Racer in Le Mans Ultimate (GT3 & Hypercar endurance)
-- Political Enthusiast (technology + governance)
+- Previous: Senior Technical Lead at FLYERALARM
+- Referee, Sim Racer (Le Mans Ultimate), Political Enthusiast
 
 ## Editing
-
-- Edit `index.html` for content/structure
-- Edit `css/styles.css` for styling and animations
-- Edit `js/script.js` for interactive behavior
-- Keep classes consistent with the design system
+- `index.html` → content & structure
+- `css/styles.css` → styling & animations
+- `js/script.js` → interactive behavior
+- `tailwind.config.js` + `input.css` → Tailwind build
 
 ## Contact
 
-X / Twitter: [@rbak44](https://x.com/rbak44)  
+X: [@rbak44](https://x.com/rbak44)  
 LinkedIn: [andre-karrlein](https://www.linkedin.com/in/andre-karrlein/)
 
 ---
