@@ -41,7 +41,7 @@
                         <span class="font-['Space_Grotesk'] text-xs tracking-[0.4em] uppercase">Mission Status: Active</span>
                         <span class="w-1.5 h-1.5 rounded-full bg-primary slow-ping"></span>
                     </div>
-                    <h1 class="text-6xl md:text-8xl font-['Space_Grotesk'] font-bold tracking-tighter leading-none mb-6">André Karrlein</h1>
+                    <h1 class="text-6xl md:text-8xl font-['Space_Grotesk'] font-bold tracking-tighter leading-none mb-6">É André Karrlein</h1>
                     <p class="text-on-surface-variant font-['Space_Grotesk'] text-lg md:text-xl tracking-wide max-w-xl mb-10 leading-relaxed uppercase">Solution Architect <span class="text-primary mx-2">•</span> Referee <span class="text-primary mx-2">•</span> Sim Racer <span class="text-primary mx-2">•</span> Political Enthusiast</p>
                     <div class="flex items-center gap-6">
                         <a href="#journey" class="magnetic-btn bg-primary text-on-primary-fixed px-10 py-4 font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all">Explore My Journey</a>
@@ -188,19 +188,21 @@
         </div>
     </footer>
 
-    <!-- Referee Modal -->
-    <div id="referee-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-sm">
-        <div class="glass-card w-full max-w-6xl overflow-hidden relative shadow-2xl">
+    <!-- Referee Modal - IMPROVED FOR MOBILE -->
+    <div id="referee-modal" class="hidden fixed inset-0 z-[100] flex items-start md:items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-sm overflow-y-auto">
+        <div class="glass-card w-full max-w-6xl my-4 md:my-0 max-h-[95dvh] flex flex-col md:block overflow-hidden relative shadow-2xl">
+            
             <!-- Close button -->
             <button id="close-referee-modal" 
-                    class="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-surface-container/80 text-on-surface-variant hover:bg-surface-container hover:text-white transition-all"
+                    class="absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-surface-container/90 text-on-surface-variant hover:bg-surface-container hover:text-white transition-all"
                     aria-label="Close modal">
                 <span class="material-symbols-outlined text-2xl">close</span>
             </button>
 
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <!-- Left: Image (like hero but swapped) -->
-                <div class="relative h-80 md:h-[520px] overflow-hidden bg-black">
+            <div class="grid grid-cols-1 md:grid-cols-2 flex-1 md:flex-none overflow-hidden">
+                
+                <!-- LEFT: Image -->
+                <div class="relative h-64 md:h-[520px] overflow-hidden bg-black flex-shrink-0">
                     <img src="images/referee.jpeg" alt="André Karrlein refereeing on the pitch" 
                          class="absolute inset-0 w-full h-full object-cover brightness-[0.95]" />
                     <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent md:hidden"></div>
@@ -214,8 +216,8 @@
                     </div>
                 </div>
 
-                <!-- Right: Content -->
-                <div class="p-8 md:p-12 flex flex-col justify-center">
+                <!-- RIGHT: Scrollable content on mobile -->
+                <div class="p-8 md:p-12 flex flex-col overflow-y-auto max-h-[60dvh] md:max-h-none flex-1 md:flex-none">
                     <div class="text-primary mb-4 flex items-center gap-3">
                         <span class="material-symbols-outlined text-4xl">gavel</span>
                         <span class="text-xs font-bold tracking-[3px] uppercase">The Referee</span>
