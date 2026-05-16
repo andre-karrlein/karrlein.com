@@ -111,7 +111,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Referee Card -->
-                    <div class="glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors h-full flex flex-col reveal reveal-delay-1">
+                    <div id="referee-card" role="button" tabindex="0" class="glass-card p-10 relative group hover:bg-surface-variant/40 transition-colors h-full flex flex-col reveal reveal-delay-1 cursor-pointer">
                         <div class="text-primary mb-6 flex items-center gap-2">
                             <span class="material-symbols-outlined text-4xl">gavel</span>
                         </div>
@@ -121,6 +121,10 @@
                             <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Authority</span>
                             <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Integrity</span>
                             <span class="px-3 py-1 bg-surface-container text-[10px] uppercase tracking-widest text-primary border border-outline-variant/30">Focus</span>
+                        </div>
+                        <div class="mt-4 text-[10px] uppercase tracking-widest text-primary/70 group-hover:text-primary transition-colors flex items-center gap-1">
+                            <span>Learn more</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
                         </div>
                     </div>
                     <!-- Sim Racing Card -->
@@ -183,6 +187,57 @@
             </div>
         </div>
     </footer>
+
+    <!-- Referee Modal -->
+    <div id="referee-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-sm">
+        <div class="glass-card w-full max-w-6xl overflow-hidden relative shadow-2xl">
+            <!-- Close button -->
+            <button id="close-referee-modal" 
+                    class="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-surface-container/80 text-on-surface-variant hover:bg-surface-container hover:text-white transition-all"
+                    aria-label="Close modal">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Left: Image (like hero but swapped) -->
+                <div class="relative h-80 md:h-[520px] overflow-hidden bg-black">
+                    <img src="images/referee.jpeg" alt="André Karrlein refereeing on the pitch" 
+                         class="absolute inset-0 w-full h-full object-cover brightness-[0.95]" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent md:hidden"></div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur rounded text-xs tracking-[2px] uppercase mb-2">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                            <span>ON THE PITCH</span>
+                        </div>
+                        <div class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold tracking-tighter">André Karrlein</div>
+                        <div class="text-sm text-white/80">Referee • SRG Ruperti • BFV</div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <div class="text-primary mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-4xl">gavel</span>
+                        <span class="text-xs font-bold tracking-[3px] uppercase">The Referee</span>
+                    </div>
+                    
+                    <h3 class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold tracking-tighter mb-6">Giving back to the beautiful game</h3>
+                    
+                    <div class="text-on-surface-variant leading-relaxed text-[15px] space-y-5 pr-2">
+                        <p>Since two years, I’ve been actively refereeing for <strong class="text-white">Schiedsrichtergruppe Ruperti (SRG Ruperti)</strong> in the Berchtesgadener Land and Traunstein Land regions for the Bavarian Football Association (BFV).</p>
+                        
+                        <p>With more than 20 games officiated — primarily men’s amateur matches — I’m happy to support amateur football and give something back to my most loved hobby. My approach is rooted in <strong class="text-white">support, authenticity & authority, empathy, organisation, and clear decision-making</strong>.</p>
+                    </div>
+
+                    <div class="mt-auto pt-8 flex flex-wrap gap-2">
+                        <span class="px-4 py-1.5 text-xs uppercase tracking-widest border border-outline-variant/40 bg-surface-container text-primary">SRG Ruperti</span>
+                        <span class="px-4 py-1.5 text-xs uppercase tracking-widest border border-outline-variant/40 bg-surface-container text-primary">BFV Amateur</span>
+                        <span class="px-4 py-1.5 text-xs uppercase tracking-widest border border-outline-variant/40 bg-surface-container text-primary">20+ Games</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">

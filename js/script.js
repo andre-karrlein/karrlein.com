@@ -4,6 +4,7 @@
 // - Mouse-tilt parallax on hero portrait
 // - Scroll progress bar
 // - Back-to-top with smooth animation
+// - Referee modal for detailed bio
 // Fully respects prefers-reduced-motion for accessibility
 // No external dependencies - pure vanilla, high performance
 
@@ -244,6 +245,64 @@ document.addEventListener('DOMContentLoaded', () => {
         'color: #A855F7; font-family: monospace; font-size: 9px'
     );
     
+    // ============================================
+    // 9. REFEREE MODAL FUNCTIONALITY
+    // ============================================
+    const refereeCard = document.getElementById('referee-card');
+    const refereeModal = document.getElementById('referee-modal');
+    const closeModalBtn = document.getElementById('close-referee-modal');
+
+    if (refereeCard && refereeModal && closeModalBtn) {
+        const openModal = () => {
+            refereeModal.classList.remove('hidden');
+            refereeModal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // prevent background scroll
+            
+            // Focus close button for accessibility
+            setTimeout(() => {
+                closeModalBtn.focus();
+            }, 50);
+        };
+
+        const closeModal = () => {
+            refereeModal.classList.remove('flex');
+            refereeModal.classList.add('hidden');
+            document.body.style.overflow = '';
+            // Return focus to card
+            refereeCard.focus();
+        };
+
+        // Open on click
+        refereeCard.addEventListener('click', openModal);
+
+        // Keyboard support for card (Enter / Space)
+        refereeCard.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal();
+            }
+        });
+
+        // Close button
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Close on overlay click (but not inside the card content)
+        refereeModal.addEventListener('click', (e) => {
+            if (e.target === refereeModal) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !refereeModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Optional: close when clicking any tag or inside content? No, only overlay + btn + esc
+    }
+
     // Optional: Konami code for fun (up up down down left right left right b a)
     // (kept minimal, not intrusive)
 });
